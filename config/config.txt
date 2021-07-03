@@ -327,7 +327,7 @@ ORGANS_CAN_DECAY
 #AGGRESSIVE_CHANGELOG
 
 ## Uncomment to override default brain health.
-DEFAULT_BRAIN_HEALTH 210
+DEFAULT_BRAIN_HEALTH 400
 
 ## Uncomment this line to announce shuttle dock announcements to the main IRC channel, if MAIN_IRC has also been setup.
 # ANNOUNCE_EVAC_TO_IRC
