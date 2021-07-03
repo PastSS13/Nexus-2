@@ -5,9 +5,6 @@ var/list/sounds_cache = list()
 	set name = "Play Global Sound"
 	if(!check_rights(R_SOUNDS))	return
 	//[INF]
-	if(!config.admin_midis_allowed)
-		alert("Admin midis currently disabled, ask devs for help.","Sorry, your music isn't allowed now.","")
-		return
 	//[/INF]
 	var/vol = input("Select a volume for the sound", "Volume") as null|anything in list(100, 75, 50, 25, 5)
 
