@@ -570,7 +570,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 //	s += "[game_version]"
 //	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 //	s += "</a>|"
-	s += "<a href=\"https://discord.gg/N4atUkH\">"
+	s += "<a href=\"https://discord.gg/RAfDfcmRK8\">"
 	s += "Discord"
 	s += "</a>"
 	s += ")"
