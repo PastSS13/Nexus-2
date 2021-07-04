@@ -1,9 +1,7 @@
 /proc/add_note(target_ckey, notetext, timestamp, adminckey, logged = 1, server)
 	if(!check_rights(R_INVESTIGATE, 1, usr)) return
 
-	if(!dbcon.IsConnected())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
-		return
+
 
 	if(!target_ckey)
 		var/new_ckey = ckey(input(usr,"Who would you like to add a note for?","Enter a ckey",null) as text)
