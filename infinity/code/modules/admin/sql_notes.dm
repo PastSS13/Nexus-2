@@ -131,11 +131,7 @@
 	if(target_ckey)
 		var/target_sql_ckey = sanitizeSQL(target_ckey)
 		var/DBQuery/query_get_notes = dbcon.NewQuery("SELECT id, timestamp, text, adminckey, lasteditor, server FROM erro_messages WHERE targetckey = '[target_sql_ckey]' and type = 'note' ORDER BY timestamp")
-		if(!query_get_notes.Execute())
-			var/err = query_get_notes.ErrorMsg()
-			log_game("SQL ERROR obtaining ckey, notetext, adminckey, last_editor, server from notes table. Error : \[[err]\]\n")
-			to_chat(usr, "No DB connection founded. Please, report to development team. Code: TC.")
-			return
+
 		output += "<h2><center>Notes of [target_ckey]</center></h2>"
 		if(!linkless && check_rights(R_INVESTIGATE, 0, usr))
 			output += "<center><a href='?_src_=holder;addnote=[target_ckey]'>\[Add Note\]</a></center>"
