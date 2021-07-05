@@ -126,3 +126,4 @@
 //	#include "../away_inf/liberia/liberia.dm"
 //	#include "../away_inf/tajsc/tajsciship.dm"
 	#include "../away_inf/yacht/yacht.dm"
+#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"

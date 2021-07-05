@@ -75,11 +75,13 @@
 	name = "\improper Frozen Lake"
 	icon_state = "hallP"
 
+/area/forest/downground
+	name = "\improper downground"
+	icon_state = "medbay"
+
 /area/forest/atmos
 	name = "\improper Forest Atmos"
 	icon_state = "bridge"
 
-	/area/forest/downground
-	name = "\improper downground"
-	icon_state = "security"
-	base_turf = /turf/simulated/floor/asteroid/aired
+
+
