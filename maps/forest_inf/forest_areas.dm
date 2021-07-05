@@ -78,3 +78,8 @@
 /area/forest/atmos
 	name = "\improper Forest Atmos"
 	icon_state = "bridge"
+
+	/area/forest/downground
+	name = "\improper downground"
+	icon_state = "security"
+	base_turf = /turf/simulated/floor/asteroid/aired
