@@ -15,10 +15,7 @@
 
 	#include "forest_snatch.dm"
 
-
 	#include "forest-1.dmm"
-
-
 
 #elif !defined(MAP_OVERRIDE)
 
