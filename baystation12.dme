@@ -384,6 +384,7 @@
 #include "code\datums\music_tracks\infinity\wonderful.dm"
 #include "code\datums\music_tracks\infinity\zemlyane.dm"
 #include "code\datums\music_tracks\infinity\gneiss\codebrain.dm"
+#include "code\datums\music_tracks\infinity\gneiss\Dragon.dm"
 #include "code\datums\music_tracks\infinity\gneiss\getset.dm"
 #include "code\datums\music_tracks\infinity\gneiss\gneiss.dm"
 #include "code\datums\music_tracks\infinity\gneiss\intruder.dm"
