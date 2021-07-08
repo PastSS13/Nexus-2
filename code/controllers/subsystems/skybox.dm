@@ -1,4 +1,5 @@
 
+
 //Exists to handle a few global variables that change enough to justify this. Technically a parallax, but it exhibits a skybox effect.
 SUBSYSTEM_DEF(skybox)
 	name = "Space skybox"
@@ -27,6 +28,7 @@ SUBSYSTEM_DEF(skybox)
 
 		var/mutable_appearance/space = new /mutable_appearance(/turf/space)
 		space.icon_state = "white"
+		space.plane = SKYBOX_PLANE	// INF нужно для того чтобы избежать белого космоса
 		space.overlays += dust
 		space_appearance_cache[i + 1] = space.appearance
 
