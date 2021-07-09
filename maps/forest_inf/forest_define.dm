@@ -31,8 +31,6 @@
 
 	default_law_type = /datum/ai_laws/nanotrasen
 
-	welcome_sound = 'infinity/sound/ambience/horror_1.ogg'
-
 	use_overmap = 1
 	num_exoplanets = 0
 
