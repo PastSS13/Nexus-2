@@ -5,6 +5,9 @@ var/list/sounds_cache = list()
 	set name = "Play Global Sound"
 	if(!check_rights(R_SOUNDS))	return
 	//[INF]
+	if(!config.admin_midis_allowed)
+		alert("Admin midis currently disabled, ask devs for help.","Sorry, your music isn't allowed now.","")
+		return
 	//[/INF]
 	var/vol = input("Select a volume for the sound", "Volume") as null|anything in list(100, 75, 50, 25, 5)
 
@@ -39,7 +42,7 @@ var/list/sounds_cache = list()
 
 	// [inf]
 	if(check_rights(R_PERMISSIONS))
-		if(alert("Override sound prefs" ,"HELL YES", "HELL NO") == "HELL YES")
+		if(alert("Override sound prefs", "Prefs override", "HELL YES", "HELL NO") == "HELL YES")
 			log_and_message_admins("override to play [S]")
 			override = TRUE
 	// [/inf]
@@ -56,7 +59,9 @@ var/list/sounds_cache = list()
 	set name = "Play Local Sound"
 	if(!check_rights(R_SOUNDS))	return
 	//[INF]
-
+	if(!config.admin_midis_allowed)
+		alert("Admin midis currently disabled, ask devs for help.","Sorry, your music isn't allowed now.","")
+		return
 	//[/INF]
 	var/vol = input("Select a volume for the sound", "Volume") as null|anything in list(100, 75, 50, 25, 5)
 
@@ -69,7 +74,9 @@ var/list/sounds_cache = list()
 	set name = "Play Server Sound"
 	if(!check_rights(R_SOUNDS))	return
 	//[INF]
-
+	if(!config.admin_midis_allowed)
+		alert("Admin midis currently disabled, ask devs for help.","Sorry, your music isn't allowed now.","")
+		return
 	//[/INF]
 	var/list/sounds = list("sound/items/bikehorn.ogg","sound/effects/siren.ogg")
 	sounds += sounds_cache

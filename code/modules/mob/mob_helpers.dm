@@ -13,8 +13,14 @@
 		return FALSE //M is too small to wield this
 	return TRUE
 
-/mob/living/proc/isSynthetic()
-	return 0
+
+/mob/proc/isSynthetic()
+	return FALSE
+
+
+/mob/living/silicon/isSynthetic()
+	return TRUE
+
 
 /mob/living/carbon/human/isSynthetic()
 	if(isnull(full_prosthetic))
@@ -30,11 +36,10 @@
 	return istype(internal_organs_by_name[BP_BRAIN], /obj/item/organ/internal/mmi_holder)
 
 
-/mob/living/silicon/isSynthetic()
-	return 1
+/// Determine if the mob is the supplied species by text name, species path, or species instance name
+/mob/proc/is_species(datum/species/S)
+	return FALSE
 
-/mob/proc/isMonkey()
-	return 0
 
 /proc/islesserform(A)
 	if(istype(A, /mob/living/carbon/human))
@@ -51,8 +56,11 @@
 				return 1
 	return 0
 
-/mob/living/carbon/human/isMonkey()
-	return istype(species, /datum/species/monkey)
+/mob/living/carbon/is_species(datum/species/S)
+	if (!S) return FALSE
+	if (istext(S)) return species.name == S
+	if (ispath(S)) return species.name == initial(S.name)
+	return species.name == S.name
 
 
 /**
@@ -67,43 +75,23 @@
 			return TRUE
 
 
-proc/isdeaf(A)
-	if(isliving(A))
-		var/mob/living/M = A
-		return (M.sdisabilities & DEAFENED) || M.ear_deaf
-	return 0
+/proc/isdeaf(mob/living/M)
+	return istype(M) && (M.ear_deaf || M.sdisabilities & DEAFENED)
 
-proc/hasorgans(A) // Fucking really??
-	return ishuman(A)
-
-proc/iscuffed(A)
-	if(istype(A, /mob/living/carbon))
-		var/mob/living/carbon/C = A
-		if(C.handcuffed)
-			return 1
-	return 0
-
-proc/hassensorlevel(A, var/level)
-	var/mob/living/carbon/human/H = A
-	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
-		var/obj/item/clothing/under/U = H.w_uniform
-		return U.sensor_mode >= level
-	return 0
-
-proc/getsensorlevel(A)
-	var/mob/living/carbon/human/H = A
-	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
-		var/obj/item/clothing/under/U = H.w_uniform
-		return U.sensor_mode
-	return SUIT_SENSOR_OFF
+/proc/iscuffed(mob/living/carbon/C)
+	return istype(C) && C.handcuffed
 
 
-/proc/is_admin(var/mob/user)
-	return check_rights(R_ADMIN, 0, user) != 0
+/proc/getsensorlevel(mob/living/carbon/human/H)
+	if (!istype(H) || !istype(H.w_uniform, /obj/item/clothing/under))
+		return SUIT_SENSOR_OFF
+	var/obj/item/clothing/under/U = H.w_uniform
+	return U.sensor_mode
 
 
-/proc/hsl2rgb(h, s, l)
-	return //TODO: Implement
+/proc/hassensorlevel(mob/living/carbon/human/H, level)
+	return getsensorlevel(H) >= level
+
 
 /*
 	Miss Chance
@@ -113,33 +101,33 @@ proc/getsensorlevel(A)
 
 //The base miss chance for the different defence zones
 var/list/global/base_miss_chance = list(
-	BP_HEAD = 35,
+	BP_HEAD = 70,
 	BP_CHEST = 10,
 	BP_GROIN = 20,
-	BP_L_LEG = 30,
-	BP_R_LEG = 30,
+	BP_L_LEG = 60,
+	BP_R_LEG = 60,
 	BP_L_ARM = 30,
 	BP_R_ARM = 30,
-	BP_L_HAND = 80, //INF was 50
-	BP_R_HAND = 80, //INF was 50
-	BP_L_FOOT = 80, //INF was 50
-	BP_R_FOOT = 80, //INF was 50
+	BP_L_HAND = 50,
+	BP_R_HAND = 50,
+	BP_L_FOOT = 70,
+	BP_R_FOOT = 70,
 )
 
 //Used to weight organs when an organ is hit randomly (i.e. not a directed, aimed attack).
 //Also used to weight the protection value that armour provides for covering that body part when calculating protection from full-body effects.
 var/list/global/organ_rel_size = list(
-	BP_HEAD = 20,
-	BP_CHEST = 60,
-	BP_GROIN = 40,
+	BP_HEAD = 25,
+	BP_CHEST = 70,
+	BP_GROIN = 30,
 	BP_L_LEG = 25,
 	BP_R_LEG = 25,
 	BP_L_ARM = 25,
 	BP_R_ARM = 25,
 	BP_L_HAND = 10,
 	BP_R_HAND = 10,
-	BP_L_FOOT = 5,
-	BP_R_FOOT = 5,
+	BP_L_FOOT = 10,
+	BP_R_FOOT = 10,
 )
 
 /proc/check_zone(zone)
@@ -200,17 +188,14 @@ var/list/global/organ_rel_size = list(
 	var/scatter_chance
 	if (zone in base_miss_chance)
 		miss_chance = base_miss_chance[zone]
-	miss_chance = max(min(miss_chance + miss_chance_mod, 94),0)
-	scatter_chance = min(95, miss_chance + 35)
+	miss_chance = max(miss_chance + miss_chance_mod, 0)
+	scatter_chance = min(95, miss_chance + 60)
 	if(prob(miss_chance))
-		if(ranged_attack)
-			if(prob(100 - scatter_chance))
-				return (ran_zone())
-			else
-				return null
-//		else if(prob(70))
-//			return null
-//		return (ran_zone())
+		if(ranged_attack && prob(scatter_chance))
+			return null
+		else if(prob(70))
+			return null
+		return (ran_zone())
 	return zone
 
 //Replaces some of the characters with *, used in whispers. pr = probability of no star.
@@ -598,7 +583,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			perpname = id.registered_name
 
 		var/datum/computer_file/report/crew_record/CR = get_crewmember_record(perpname)
-		if(check_records && !CR && !isMonkey())
+		if(check_records && !CR && !is_species(SPECIES_MONKEY))
 			threatcount += 4
 
 		if(check_arrest && CR && (CR.get_criminalStatus() == GLOB.arrest_security_status))

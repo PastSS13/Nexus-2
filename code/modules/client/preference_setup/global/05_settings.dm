@@ -44,7 +44,7 @@
 	pref.lastchangelog	= sanitize_text(pref.lastchangelog, initial(pref.lastchangelog))
 	pref.default_slot	= sanitize_integer(pref.default_slot, 1, config.character_slots, initial(pref.default_slot))
 
-
+//	pref.lastchangelog_infinity = sanitize_text(pref.lastchangelog_infinity, initial(pref.lastchangelog_infinity))
 
 /datum/category_item/player_setup_item/player_global/settings/content(var/mob/user)
 	. = list()

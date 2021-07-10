@@ -10,16 +10,16 @@
 //	opacity = FALSE // wait... we should able to use it somehow..
 	anchored = TRUE
 	layer = BELOW_DOOR_LAYER
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | LONG_GLIDE
 	atmos_canpass = CANPASS_DENSITY
 
 	var/on = FALSE
 	var/locked = TRUE
 
 	// Access to operating this machine
-	req_access = list(access_security, access_forensics_lockers)
+	req_access = list(access_security)
 	// Access to pass alarm trigger
-	var/pass_access = list(access_security, access_forensics_lockers)
+	var/pass_access = list(access_security)
 
 //	var/timeBetweenUses = 2 SECONDS // I can see this being fun
 	var/success_sound = 'sound/machines/chime.ogg'
@@ -262,19 +262,18 @@
 
 //SECURITY SCANS
 	.["guns"] = list()
-	if(check_items && ((!pass_access) in target.GetAccess()) && bypass_filter || !bypass_filter)
-		for(var/obj/item/I in target.contents)
-			if(subtype_check(I, banned_items))
-				.["level"] += 4
-				.["guns"] += I.name
-				break
-
-			else if(subtype_check(I, storage_types) && I.contents)
-				for(var/obj/item/thing in I.contents)
-					if(subtype_check(thing, banned_items))
-						.["level"] += 4
-						.["guns"] += thing.name
-						break
+	if (check_items)
+		if(!bypass_filter || !check_access(target, pass_access))
+			var/list/items_to_check = target.contents.Copy()
+			while(length(items_to_check))
+				var/obj/item/I = items_to_check[1]
+				if(subtype_check(I, banned_items))
+					.["level"] += 4
+					.["guns"] += I.name
+					break
+				if(I.contents)
+					items_to_check += I.contents
+				items_to_check.Cut(1, 2)
 
 	if(check_records || check_arrests)
 		var/perpname = target.name
@@ -283,7 +282,7 @@
 		.["Violator"] += perpname
 
 		var/datum/computer_file/report/crew_record/CR = RecordByName(perpname)
-		if(check_records && !CR && !target.isMonkey())
+		if(check_records && !CR && !target.is_species(SPECIES_MONKEY))
 			.["level"] += 4
 			.["Unknown"] += TRUE
 

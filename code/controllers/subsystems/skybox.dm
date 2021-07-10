@@ -1,5 +1,4 @@
 
-
 //Exists to handle a few global variables that change enough to justify this. Technically a parallax, but it exhibits a skybox effect.
 SUBSYSTEM_DEF(skybox)
 	name = "Space skybox"

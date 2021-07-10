@@ -291,8 +291,6 @@
 
 /mob/proc/reset_view(atom/A)
 	if (client)
-		client.pixel_x = initial(client.pixel_x)
-		client.pixel_y = initial(client.pixel_y)
 		A = A ? A : eyeobj
 		if (istype(A, /atom/movable))
 			client.perspective = EYE_PERSPECTIVE
@@ -421,7 +419,7 @@
 			return "<span class='notice'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
 
 /client/verb/changes()
-	set name = "ND Changelog"
+	set name = "Bay Changelog"
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',
@@ -484,7 +482,7 @@
 	. = OnSelfTopic(href_list, CanUseTopic(usr, GLOB.self_state, href_list))
 	if (.)
 		return
-	if (href_list["flavor_change"] && !is_admin(usr) && (usr != src))
+	if (href_list["flavor_change"] && !isadmin(usr) && (usr != src))
 		log_and_message_admins(usr, "is suspected of trying to change flavor text on [key_name_admin(src)] via Topic exploits.")
 	return ..()
 

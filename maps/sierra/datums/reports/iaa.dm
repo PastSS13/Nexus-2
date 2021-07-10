@@ -20,7 +20,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -43,7 +43,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -68,7 +68,7 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
@@ -78,7 +78,7 @@
 	title = "Отчет персонала о происшествии"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/incident_repstaff/generate_fields()
+/datum/computer_file/report/recipient/iaa/incident_repstaff/generate_fields()
 	..()
 	var/list/heads_fields = list()
 	add_field(/datum/report_field/text_label/header, "Отчет персонала о происшествии")
@@ -92,14 +92,14 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	heads_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен и утвержден", required = 1)
 	heads_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи и печати Агента Внутренних Дел или департамента.")
 	for(var/datum/report_field/field in heads_fields)
 		field.set_access(access_edit = access_heads)
 
 /datum/computer_file/report/recipient/archive
 	form_name = "HR-NTCO-04a"
 	logo ="\[logo\]"
-	title = "Форма для архива"
+	title = "Внутренний архив"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/archive/generate_fields()
@@ -108,7 +108,7 @@
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/pencode_text, "Меморандум", required = 1)
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ или департамента.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел или департамента.")
 
 /datum/computer_file/report/recipient/iaa/memo
 	form_name = "HR-NTCO-04a"
@@ -123,7 +123,7 @@
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/pencode_text, "Меморандум", required = 1)
 	capiaa_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ или капитана.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел или капитана.")
 	set_access(list(list(access_captain, access_iaa)), list(list(access_captain, access_iaa)))
 	for(var/datum/report_field/field in capiaa_fields)
 		field.set_access(access_edit = list(list(access_captain, access_iaa)))
@@ -131,7 +131,7 @@
 /datum/computer_file/report/recipient/iaa/work_visa
 	form_name = "HR-NTCO-03b"
 	logo ="\[logo\]"
-	title = "Форма запроса рабочей визы"
+	title = "Запрос рабочей визы"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/iaa/work_visa/generate_fields()
@@ -143,14 +143,14 @@
 	add_field(/datum/report_field/simple_text, "Получатель визы", required = 1)
 	iaa_fields += add_field(/datum/report_field/signature, "Подпись, выписывающего визу", required = 1)
 	add_field(/datum/report_field/signature, "Подпись получателя", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел.")
 	for(var/datum/report_field/field in iaa_fields)
 		field.set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/iaa/salary_deceased
 	form_name = "HR-NTCO-03c"
 	logo ="\[logo\]"
-	title = "Форма выплаты оставшегося оклада погибшему сотруднику"
+	title = "Выплата оставшегося оклада погибшему сотруднику"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/iaa/salary_deceased/generate_fields()
@@ -168,14 +168,14 @@
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 	iaahop_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен", required = 1)
 	iaahop_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел.")
 	for(var/datum/report_field/field in iaahop_fields)
 		field.set_access(access_edit = list(list(access_hop, access_iaa)))
 
 /datum/computer_file/report/recipient/iaa/check_citizenship
 	form_name = "HR-NTCO-02a"
 	logo ="\[logo\]"
-	title = "Форма запроса проверки гражданства сотрудника"
+	title = "Запрос проверки гражданства сотрудника"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/iaa/check_citizenship/generate_fields()
@@ -190,28 +190,31 @@
 	iaahop_fields += add_field(/datum/report_field/people/from_manifest, "Данная форма был рассмотрена", required = 1)
 	iaahop_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
 	iaahop_fields += add_field(/datum/report_field/options/yes_no, "Данная форма была одобрена/отклонена")
-	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати НТ.")
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия печати Агента Внутренних Дел.")
 	for(var/datum/report_field/field in iaahop_fields)
 		field.set_access(access_edit = list(access_hop, access_iaa))
 	set_access(access_security, override = 0)
 
-/datum/computer_file/report/recipient/iaa/title_page
-	form_name = "HR-NTCO-00"
-	logo ="\[logo\]"
-	title = "Титульный лист для многостраничного отчета"
+/datum/computer_file/report/recipient/iaa/audit
+	form_name = "HR-NTCO-03f"
+	logo = "\[logo\]"
+	title = "Аудит департамента ИКН Сьерра"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/title_page/generate_fields()
+/datum/computer_file/report/recipient/iaa/audit/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Внутреняя связь Центрального Командования")
-	add_field(/datum/report_field/text_label/header, "ИКН Сьерра")
-	add_field(/datum/report_field/text_label/header, "Трансляция сообщения")
-	add_field(/datum/report_field/people/from_manifest,"Отправитель", required = 1)
-	add_field(/datum/report_field/simple_text,"Получатель", required = 1)
-	add_field(/datum/report_field/people/from_manifest, "Составитель", required = 1)
-	add_field(/datum/report_field/pencode_text, "Содержание", required = 1)
-	add_field(/datum/report_field/pencode_text, "Заключение", required = 1)
-	add_field(/datum/report_field/number, "Количество страниц (не включая эту)", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Настоящее сообщение и прилагаемые к нему документы предназначены только для адресата и могут содержать конфиденциальную информацию. Любое несанкционированное раскрытие информации строго запрещено.\
-	Если эта передача получена по ошибке, пожалуйста, немедленно уведомите об этом как отправителя, так и управление внутренних дел, чтобы можно было принять меры по исправлению положения.\
-	Несоблюдение этого требования является нарушением корпоративных регуляций и будет преследоваться по всей строгости закона, если это применимо.")
+	var/list/capiaa_fields = list()
+	add_field(/datum/report_field/text_label/header, "Аудит департамента ИКН Сьерра")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Время")
+	add_field(/datum/report_field/people/from_manifest, "Глава департамента")
+	add_field(/datum/report_field/pencode_text, "Положительные наблюдения")
+	add_field(/datum/report_field/pencode_text, "Отрицательные наблюдения")
+	add_field(/datum/report_field/pencode_text, "Прочие заметки")
+	add_field(/datum/report_field/people/from_manifest, "Данный рапорт был составлен", required = 1)
+	add_field(/datum/report_field/signature, "Подпись", required = 1)
+	capiaa_fields += add_field(/datum/report_field/people/from_manifest, "Данный рапорт был рассмотрен", required = 1)
+	capiaa_fields += add_field(/datum/report_field/signature, "Подпись", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
+	for(var/datum/report_field/field in capiaa_fields)
+		field.set_access(access_edit = list(list(access_captain, access_iaa)))

@@ -12,6 +12,7 @@
 /obj/item/clothing/accessory/storage/holster/Initialize()
 	. = ..()
 	INIT_SKIP_QDELETED
+	container.virtual = TRUE
 	set_extension(src, /datum/extension/holster, container, sound_in, sound_out, can_holster)
 
 /obj/item/clothing/accessory/storage/holster/attackby(obj/item/W as obj, mob/user as mob)
@@ -25,8 +26,7 @@
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
 	if(H.unholster(user))
 		return
-	else
-		. = ..(user)
+	. = ..(user)
 
 /obj/item/clothing/accessory/storage/holster/examine(mob/user)
 	. = ..(user)
@@ -84,7 +84,6 @@
 	name = "machete sheath"
 	desc = "A handsome synthetic leather sheath with matching belt."
 	icon_state = "holster_machete"
-	can_holster = list(/obj/item/material/hatchet/machete, /obj/item/chainsword)
 	sound_in = 'sound/effects/holster/sheathin.ogg'
 	sound_out = 'sound/effects/holster/sheathout.ogg'
 	body_location = LEGS
