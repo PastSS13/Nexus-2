@@ -3,7 +3,6 @@
 "c" = (/obj/structure/table/standard,/obj/item/stock_parts/manipulator/pico,/turf/simulated/floor/cult,/area/forest/downground)
 "d" = (/turf/unsimulated/mineral,/area/forest/downground)
 "e" = (/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground)
-"f" = (/obj/item/gun/projectile/spistol,/turf/simulated/floor/cult,/area/forest/downground)
 "g" = (/obj/structure/flora/seaweed/glow,/turf/simulated/floor/cult,/area/forest/downground)
 "h" = (/obj/machinery/portable_atmospherics/hydroponics,/turf/simulated/floor/cult,/area/forest/downground)
 "i" = (/turf/simulated/floor/cult,/area/forest/downground)
@@ -23,7 +22,6 @@
 "w" = (/obj/structure/closet,/turf/simulated/floor/cult,/area/forest/downground)
 "x" = (/obj/item/material/shard,/turf/simulated/floor/cult,/area/forest/downground)
 "y" = (/obj/structure/closet/secure_closet/guncabinet,/obj/item/gun/energy/l6_saw,/turf/simulated/floor/cult,/area/forest/downground)
-"z" = (/mob/living/simple_animal/faithful_hound,/turf/simulated/floor/cult,/area/forest/downground)
 "A" = (/obj/item/beartrap/deployed,/turf/simulated/floor/cult,/area/forest/downground)
 "B" = (/obj/structure/ladder/up,/turf/simulated/floor/cult,/area/forest/downground)
 "C" = (/mob/living/simple_animal/hostile/scarybat,/turf/simulated/floor/cult,/area/forest/downground)
@@ -213,9 +211,9 @@ dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddabcehhlnorsieiaddddddddddddddddddddddddddd
 ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddateihhiilueiiiaddddddddddddddddddddddddddd
 ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaeiiiiiiiivieiaddddddddddddddddddddddddddd
-ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddawwieieeixiiiiadefgyijdddddddddddddddddddd
+ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddawwieieeixiiiiadeigyijdddddddddddddddddddd
 ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaiieiiixeieiieadkiiiiedddddddddddddddddddd
-ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaaaaaaaaazaaaaadmeeiiidddddddddddddddddddd
+ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaaaaaaaaaiaaaaadmeeiiidddddddddddddddddddd
 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeddddddiiiieedddddddddddddddddddd
 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddidddddddiiieedddddddddddddddddddd
 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddAddddddddeddddddddddddddddddddddd
