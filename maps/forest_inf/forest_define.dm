@@ -10,7 +10,9 @@
 	station_levels = list(1,2)
 	admin_levels = list(4,5)
 	empty_levels = list(6)
-	accessible_z_levels = list("1"=1,"2"=2,"6"=30)
+	accessible_z_levels = list("1"=1,"2"=1,"6"=30)
+	player_levels = list(1,2)
+	contact_levels = list(1,2)
 	usable_email_tlds = list("freemail.net")
 
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
