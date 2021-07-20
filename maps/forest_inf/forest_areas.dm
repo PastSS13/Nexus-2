@@ -88,6 +88,13 @@
 	icon_state = "security"
 	base_turf = /turf/simulated/floor/asteroid/aired
 
+/area/forest/downground2
+	name = "\improper research"
+	icon_state = "medbay"
+
+
+
+
 
 
 
