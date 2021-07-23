@@ -99,7 +99,7 @@
 	economic_power = 0.9 //T
 	subversive_potential = 35
 
-*//
+*/
 
 /decl/cultural_info/faction/septenergo
 	name = FACTION_SEPTENERGO
@@ -110,6 +110,3 @@
 	economic_power = 1.1
 	subversive_potential = 10
 	language = LANGUAGE_HUMAN_EURO
-
-
-

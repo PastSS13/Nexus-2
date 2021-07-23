@@ -66,3 +66,6 @@ flyway.conf
 # linux
 nohup.out
 #/inf
+
+# https://github.com/SpaceManiac/SpacemanDMM
+data/minimaps
