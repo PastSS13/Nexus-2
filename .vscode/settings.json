@@ -2,9 +2,31 @@
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
+	"files.encoding": "utf8",
 	"files.eol": "\r\n",
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
+	"gitblame.commitUrl": "https://github.com/infinitystation/baystation12/commit/${hash}",
+	"gitlens.advanced.blame.customArguments": ["-w"],
+	"tgstationTestExplorer.project.resultsType": "json",
+	"workbench.editorAssociations": {
+		"*.dmi": "imagePreview.previewEditor"
+	},
 	"files.trimTrailingWhitespace": true,
-	"gitblame.commitUrl": "https://github.com/infinitystation/baystation12/commit/${hash}"
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.DS_Store": true,
+		"**/.factorypath": true,
+		"**/.git": true,
+		"**/.hg": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.svn": true,
+		"**/.vscode": true,
+		"**/*.dmb": true,
+		"**/*.lk": true,
+		"**/*.rsc": true,
+		"**/~playground": true,
+		"**/CVS": true,
+	},
 }
