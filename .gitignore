@@ -69,3 +69,11 @@ nohup.out
 
 # https://github.com/SpaceManiac/SpacemanDMM
 data/minimaps
+
+cfg
+data
+config
+!config/custom_items
+!config/example
+!config/info
+!config/names
