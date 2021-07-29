@@ -93,6 +93,11 @@
 	icon_state = "medbay"
 
 
+/area/forest/Nexus
+	name = "\improper dead Nexus"
+	icon_state = "medbay"
+
+
 
 
 
