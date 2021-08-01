@@ -1,6 +1,6 @@
 "aa" = (/turf/simulated/mineral/random,/area/forest/downground)
 "ab" = (/obj/structure/table/standard,/obj/item/stack/cable_coil,/obj/item/stack/cable_coil,/turf/simulated/floor/cult,/area/forest/downground)
-"ac" = (/obj/structure/table/standard,/obj/machinery/reagent_temperature,/turf/simulated/floor/cult,/area/rnd/research)
+"ac" = (/obj/structure/table/standard,/obj/machinery/reagent_temperature,/turf/simulated/floor/cult,/area/forest/downground2)
 "ad" = (/turf/unsimulated/mineral,/area/forest/downground)
 "ae" = (/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground)
 "af" = (/turf/simulated/floor/asteroid/aired,/area/forest/downground)
@@ -54,31 +54,31 @@
 "bb" = (/obj/effect/floor_decal/techfloor/corner{dir = 4},/obj/effect/spider/stickyweb,/turf/simulated/floor/tiled/techfloor,/area/forest/downground)
 "bc" = (/obj/machinery/door/airlock/external{frequency = 1380; id_tag = "specops_shuttle_fore_hatch"; locked = 1; name = "Forward Docking Hatch"; req_access = newlist()},/turf/simulated/floor/tiled/techfloor/grid,/area/forest/downground)
 "bd" = (/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
-"be" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/machinery/chemical_dispenser,/turf/simulated/floor/cult,/area/rnd/research)
-"bf" = (/obj/structure/table/standard,/obj/item/storage/box/autoinjectors,/obj/item/storage/box/beakers,/turf/simulated/floor/cult,/area/rnd/research)
-"bg" = (/obj/structure/table/standard,/obj/machinery/atmospherics/unary/vent_pump/on,/obj/item/reagent_containers/glass/beaker/vial,/obj/item/clothing/glasses/science,/obj/item/tank/hydrogen,/turf/simulated/floor/cult,/area/rnd/research)
+"be" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/machinery/chemical_dispenser,/turf/simulated/floor/cult,/area/forest/downground2)
+"bf" = (/obj/structure/table/standard,/obj/item/storage/box/autoinjectors,/obj/item/storage/box/beakers,/turf/simulated/floor/cult,/area/forest/downground2)
+"bg" = (/obj/structure/table/standard,/obj/machinery/atmospherics/unary/vent_pump/on,/obj/item/reagent_containers/glass/beaker/vial,/obj/item/clothing/glasses/science,/obj/item/tank/hydrogen,/turf/simulated/floor/cult,/area/forest/downground2)
 "bh" = (/obj/structure/table/standard,/obj/item/stock_parts/manipulator/pico,/obj/item/tank/hydrogen,/turf/simulated/floor/cult,/area/forest/downground)
-"bi" = (/obj/machinery/constructable_frame/machine_frame,/turf/simulated/floor/cult,/area/rnd/research)
+"bi" = (/obj/machinery/constructable_frame/machine_frame,/turf/simulated/floor/cult,/area/forest/downground2)
 "bj" = (/obj/structure/closet/secure_closet/medical1{req_access = list("ACCESS_CENT_GENERAL")},/obj/effect/floor_decal/corner/paleblue/diagonal,/obj/item/defibrillator/loaded,/turf/simulated/floor/cult,/area/forest/downground2)
 "bk" = (/obj/effect/floor_decal/corner/paleblue/diagonal,/obj/machinery/sleeper{dir = 4},/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
 "bl" = (/obj/effect/landmark/explosion/medium,/obj/effect/landmark/corpse/chef,/turf/simulated/floor/cult,/area/forest/downground)
 "bm" = (/obj/structure/bed/chair/pew/mahogany,/obj/effect/shadow_wight,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
 "bn" = (/obj/structure/railing/mapped{dir = 1},/turf/simulated/floor/asteroid/aired,/area/forest/downground2)
 "bo" = (/obj/structure/bed/chair/pew/left/mahogany,/obj/item/ammo_casing,/obj/item/ammo_casing,/obj/effect/shadow_wight,/turf/simulated/floor/cult,/area/forest/downground)
-"bp" = (/obj/structure/table/standard,/obj/machinery/reagent_temperature/cooler{density = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/cult,/area/rnd/research)
-"bq" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/constructable_frame/machine_frame,/turf/simulated/floor/cult,/area/rnd/research)
+"bp" = (/obj/structure/table/standard,/obj/machinery/reagent_temperature/cooler{density = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/cult,/area/forest/downground2)
+"bq" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/constructable_frame/machine_frame,/turf/simulated/floor/cult,/area/forest/downground2)
 "br" = (/turf/simulated/wall/walnut,/area/forest/downground)
-"bs" = (/obj/item/stack/material/steel,/mob/living/simple_animal/hostile/meatstation/wormscientist,/turf/simulated/floor/cult,/area/rnd/research)
-"bt" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/bed/chair/office/light,/turf/simulated/floor/cult,/area/rnd/research)
+"bs" = (/obj/item/stack/material/steel,/mob/living/simple_animal/hostile/meatstation/wormscientist,/turf/simulated/floor/cult,/area/forest/downground2)
+"bt" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/bed/chair/office/light,/turf/simulated/floor/cult,/area/forest/downground2)
 "bu" = (/obj/machinery/atmospherics/pipe/manifold/hidden,/turf/simulated/floor/cult,/area/forest/downground2)
 "bv" = (/obj/structure/closet/secure_closet/medical_wall{pixel_x = 32; pixel_y = 5; req_access = list("ACCESS_SYNDICATE")},/obj/structure/iv_drip,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OPlus,/obj/item/reagent_containers/ivbag/blood/OPlus,/obj/effect/floor_decal/corner/pink/diagonal,/obj/structure/hygiene/sink{dir = 4; pixel_x = 22},/turf/simulated/floor/cult,/area/forest/downground2)
 "bw" = (/obj/structure/table/reinforced,/obj/item/stack/medical/advanced/bruise_pack,/obj/item/reagent_containers/syringe/antiviral,/obj/item/reagent_containers/syringe/antiviral,/obj/effect/floor_decal/corner/pink/diagonal,/obj/machinery/light,/obj/effect/spider/stickyweb,/obj/machinery/power/apc{name = "south bump"; pixel_y = -24},/obj/structure/cable/green,/turf/simulated/floor/cult,/area/forest/downground2)
 "bx" = (/obj/structure/handrail{dir = 4},/obj/machinery/mech_recharger,/obj/effect/spider/stickyweb,/turf/simulated/floor/tiled/techfloor/grid,/area/forest/downground)
 "by" = (/obj/machinery/recharger/wallcharger{dir = 8; pixel_x = 22},/obj/effect/floor_decal/techfloor{dir = 4},/obj/effect/spider/stickyweb,/turf/simulated/floor/tiled/techfloor,/area/forest/downground)
-"bz" = (/obj/machinery/r_n_d/destructive_analyzer,/turf/simulated/floor/cult,/area/rnd/research)
-"bA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/obj/item/stack/material/steel,/turf/simulated/floor/cult,/area/rnd/research)
-"bB" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/item/stack/material/plastic/ten,/turf/simulated/floor/cult,/area/rnd/research)
-"bC" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/item/stack/cable_coil/random,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/rnd/research)
+"bz" = (/obj/machinery/r_n_d/destructive_analyzer,/turf/simulated/floor/cult,/area/forest/downground2)
+"bA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/obj/item/stack/material/steel,/turf/simulated/floor/cult,/area/forest/downground2)
+"bB" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/item/stack/material/plastic/ten,/turf/simulated/floor/cult,/area/forest/downground2)
+"bC" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/item/stack/cable_coil/random,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
 "bD" = (/obj/machinery/optable,/obj/effect/floor_decal/corner/pink/diagonal,/obj/effect/floor_decal/corner/paleblue/diagonal,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
 "bE" = (/mob/living/simple_animal/hostile/meatstation/wormscientist,/turf/simulated/floor/cult,/area/forest/downground2)
 "bF" = (/obj/structure/table/reinforced,/obj/item/storage/firstaid/surgery,/obj/item/clothing/mask/surgical,/obj/item/clothing/gloves/latex,/obj/effect/floor_decal/corner/pink/diagonal,/turf/simulated/floor/cult,/area/forest/downground2)
@@ -87,19 +87,19 @@
 "bI" = (/obj/structure/table/woodentable_reinforced/mahogany/walnut,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
 "bJ" = (/obj/machinery/embedded_controller/radio/simple_docking_controller{frequency = 1380; id_tag = "specops_shuttle_fore"; name = "forward docking hatch controller"; pixel_y = -25; tag_door = "specops_shuttle_fore_hatch"},/obj/structure/handrail{dir = 4},/obj/machinery/light/small/readylight,/obj/machinery/mech_recharger,/obj/effect/spider/stickyweb,/turf/simulated/floor/tiled/techfloor/grid,/area/forest/downground)
 "bK" = (/obj/machinery/light/small/readylight,/obj/machinery/recharger/wallcharger{dir = 8; pixel_x = 22},/obj/effect/floor_decal/techfloor{dir = 4},/obj/effect/floor_decal/techfloor/hole{dir = 4},/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/turf/simulated/floor/tiled/techfloor,/area/forest/downground)
-"bL" = (/obj/machinery/constructable_frame/computerframe{dir = 8},/turf/simulated/floor/cult,/area/rnd/research)
-"bM" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/reagentgrinder,/obj/item/stack/material/phoron,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/rnd/research)
+"bL" = (/obj/machinery/constructable_frame/computerframe{dir = 8},/turf/simulated/floor/cult,/area/forest/downground2)
+"bM" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/reagentgrinder,/obj/item/stack/material/phoron,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
 "bN" = (/obj/structure/bed/sofa/black/right,/obj/random/date_based/christmas/xmaslights{dir = 1; pixel_y = 24},/turf/simulated/floor/cult,/area/forest/downground)
-"bO" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/item/reagent_containers/dropper,/obj/item/stack/material/steel,/turf/simulated/floor/cult,/area/rnd/research)
-"bP" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/rnd/research)
+"bO" = (/obj/machinery/power/port_gen/pacman{anchored = 1; sheets = 10},/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/cult,/area/forest/downground2)
+"bP" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/item/reagent_containers/dropper,/obj/item/stack/material/steel,/turf/simulated/floor/cult,/area/forest/downground2)
 "bQ" = (/obj/structure/holoplant,/obj/machinery/light/spot{dir = 1},/turf/simulated/floor/cult,/area/forest/downground)
 "bR" = (/obj/machinery/light/spot,/obj/item/ammo_casing,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
 "bS" = (/obj/structure/table/rack/wooden,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
 "bT" = (/obj/effect/shuttle_landmark/specops/start,/obj/machinery/door/airlock/external{frequency = 1380; id_tag = "specops_shuttle_fore_hatch"; locked = 1; name = "Forward Docking Hatch"; req_access = newlist()},/turf/simulated/floor/tiled/techfloor/grid,/area/forest/downground)
-"bU" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/constructable_frame/machine_frame,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/rnd/research)
-"bV" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/turf/simulated/floor/cult,/area/rnd/research)
+"bU" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
+"bV" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/constructable_frame/machine_frame,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
 "bW" = (/obj/structure/window/reinforced/tinted{dir = 8},/obj/machinery/vending/dinnerware{dir = 4},/turf/simulated/floor/cult,/area/forest/downground)
-"bX" = (/obj/random/soap,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/rnd/research)
+"bX" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/turf/simulated/floor/cult,/area/forest/downground2)
 "bY" = (/turf/simulated/floor/cult,/area/forest/downground2)
 "bZ" = (/obj/effect/landmark/explosion/medium,/turf/simulated/floor/cult,/area/forest/downground)
 "ca" = (/obj/effect/spider/stickyweb,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
@@ -140,7 +140,7 @@
 "cJ" = (/obj/effect/floor_decal/techfloor/corner,/obj/effect/spider/stickyweb,/obj/random/single/meatstation/meatball,/turf/simulated/floor/tiled/techfloor,/area/forest/downground)
 "cK" = (/obj/machinery/vending/medical,/obj/effect/floor_decal/corner/paleblue/diagonal,/turf/unsimulated/mineral,/area/forest/downground2)
 "cL" = (/obj/structure/table/woodentable_reinforced/mahogany/walnut,/obj/item/flame/candle,/obj/effect/spider/stickyweb,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
-"cM" = (/turf/unsimulated/mineral,/area/rnd/research)
+"cM" = (/obj/machinery/power/apc{name = "south bump"; pixel_y = -24},/obj/structure/cable/green,/turf/simulated/floor/cult,/area/forest/downground2)
 "cN" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/obj/effect/floor_decal/corner_techfloor_grid{dir = 5},/obj/effect/floor_decal/corner_techfloor_grid{dir = 10},/obj/effect/floor_decal/techfloor/corner{dir = 1},/obj/effect/floor_decal/techfloor/corner{dir = 4},/obj/effect/floor_decal/techfloor/corner{dir = 8},/obj/effect/floor_decal/techfloor/corner,/obj/effect/spider/stickyweb,/obj/random/single/meatstation/meatworm,/turf/simulated/floor/cult,/area/forest/downground)
 "cO" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/disposalpipe/segment,/obj/effect/floor_decal/techfloor{dir = 8},/obj/effect/floor_decal/techfloor{dir = 4},/obj/effect/spider/stickyweb,/obj/random/single/meatstation/meatworm,/turf/simulated/floor/cult,/area/forest/downground)
 "cP" = (/obj/structure/curtain/medical,/obj/effect/floor_decal/corner/pink/diagonal,/turf/simulated/floor/cult,/area/forest/downground2)
@@ -193,8 +193,8 @@
 "dK" = (/obj/random/date_based/christmas/xmaslights,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
 "dL" = (/obj/structure/bed/chair/pew/mahogany,/turf/simulated/floor/cult,/area/forest/downground)
 "dM" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/structure/window/reinforced{dir = 8},/obj/structure/bed/chair/office/comfy/beige{dir = 4},/turf/simulated/floor/asteroid/aired,/area/forest/downground)
-"dN" = (/obj/machinery/power/port_gen/pacman{anchored = 1; sheets = 10},/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/cult,/area/rnd/research)
-"dO" = (/obj/machinery/power/apc{name = "south bump"; pixel_y = -24},/obj/structure/cable/green,/turf/simulated/floor/cult,/area/rnd/research)
+"dN" = (/obj/random/soap,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground2)
+"dO" = (/obj/machinery/organ_printer/flesh,/turf/simulated/floor/cult,/area/forest/downground2)
 "dP" = (/obj/structure/table/steel,/obj/item/flame/candle,/obj/item/storage/mre/random,/turf/simulated/floor/cult,/area/forest/downground)
 "dQ" = (/obj/structure/bed/chair/pew/left/mahogany,/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/forest/downground)
 "dR" = (/obj/effect/wallframe_spawn/reinforced/hull,/obj/machinery/door/firedoor,/obj/machinery/door/blast/regular/open{density = 0; id_tag = "rubroom_blast"; name = "Space Shutters"; opacity = 0},/obj/effect/floor_decal/industrial/outline/orange,/turf/simulated/floor/plating,/area/forest/downground)
@@ -205,7 +205,6 @@
 "dW" = (/turf/simulated/floor/asteroid/aired,/area/forest/downground2)
 "dX" = (/obj/item/reagent_containers/food/snacks/meat/meatstationmeat,/turf/simulated/floor/asteroid/aired,/area/forest/downground2)
 "dY" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/mineral/processing_unit,/obj/machinery/conveyor{id = "mining_internal"},/turf/simulated/floor,/area/forest/downground2)
-"dZ" = (/obj/machinery/organ_printer/flesh,/turf/simulated/floor/cult,/area/rnd/research)
 "ea" = (/obj/effect/wallframe_spawn/no_grille,/obj/machinery/door/firedoor,/turf/simulated/floor/plating,/area/forest/downground2)
 "eb" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/conveyor{id = "mining_internal"},/turf/simulated/floor,/area/forest/downground2)
 "ec" = (/obj/structure/bed/chair/pew/left/mahogany,/obj/item/ammo_casing,/obj/effect/shadow_wight,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
@@ -256,9 +255,7 @@
 "kY" = (/obj/item/ammo_casing,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
 "ln" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/structure/bed/chair/wood/walnut{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/alarm{dir = 4; pixel_x = -24},/turf/simulated/floor/cult,/area/forest/downground)
 "lQ" = (/obj/machinery/conveyor{dir = 8; id = "mining_internal"},/turf/simulated/floor,/area/forest/downground2)
-"mM" = (/obj/machinery/door/unpowered/simple/iron,/turf/simulated/floor/cult,/area/rnd/research)
 "nI" = (/obj/structure/rubble/war,/turf/simulated/floor/cult,/area/forest/downground)
-"nO" = (/turf/simulated/floor/cult,/area/rnd/research)
 "oj" = (/obj/machinery/mineral/unloading_machine{emagged = 1},/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/floor/tiled/monotile,/area/forest/downground2)
 "oF" = (/obj/structure/table/woodentable_reinforced/walnut,/obj/structure/flora/pottedplant/deskleaf{pixel_x = 6},/turf/simulated/floor/cult,/area/forest/downground)
 "oP" = (/obj/effect/floor_decal/spline/fancy/wood,/mob/living/simple_animal/hostile/meat/strippedhuman,/turf/simulated/floor/cult,/area/forest/downground)
@@ -320,7 +317,6 @@
 "LM" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/random/date_based/christmas/xmaslights{dir = 1; pixel_y = 24},/obj/effect/floor_decal/spline/fancy/wood{dir = 1},/turf/simulated/floor/cult,/area/forest/downground)
 "MJ" = (/obj/effect/floor_decal/techfloor/orange{dir = 1},/obj/machinery/pile_ripper{emagged = 1},/obj/machinery/conveyor{dir = 4; id = "compactor"},/turf/simulated/floor/tiled/techfloor/grid,/area/forest/downground2)
 "Ng" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/mob/living/simple_animal/hostile/meat/strippedhuman,/turf/simulated/floor/cult,/area/forest/downground)
-"Nn" = (/obj/effect/spider/stickyweb,/turf/simulated/floor/cult,/area/rnd/research)
 "No" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/bed/sofa/brown/left{dir = 8},/obj/machinery/button/blast_door{dir = 8; id_tag = "rubroom_blast"; name = "Blast Door"; pixel_x = 22},/obj/effect/floor_decal/spline/fancy/wood{dir = 4},/turf/simulated/floor/cult,/area/forest/downground)
 "NJ" = (/obj/machinery/door/airlock/civilian{id_tag = "privatedorm2.1"; name = "Room One"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/door/firedoor,/obj/effect/floor_decal/carpet/green{dir = 1},/obj/random/date_based/christmas/doorwreath{dir = 1},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 4},/obj/effect/floor_decal/spline/fancy/wood/corner,/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 8},/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/cult,/area/forest/downground)
 "NK" = (/obj/structure/barricade,/turf/simulated/floor/asteroid/aired,/area/forest/downground)
@@ -505,13 +501,13 @@ adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
 adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafadnIadadadafadadadadadadadadafafadadafafaiaiaiaGaGaGaGaGaGaGadadadadadaEaEaEaEaEaVefeglQlQehdBaVadadadadadcTcTcTcTcTcTcTadadadadadadadadadadadadadadadadadadadadadadadadadadad
 adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadFLadafafadadadadadadadadadadafadadadadaiaicaaGaSdDdEdFdGaGadadadadadaEaKaLaMaEaVdBdBdBdBdBdBaVadadadadadadcTcTcTcTadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
 adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafafadadafafadaiaiadadaGdHaiblaDaiaGaGadadadadaEaOaPaQaEaVaVaVaVaVaVaVaVadadadadadadadcTaiPxadadadaVaVaVaVaVaVaVaVadadadadadadadadadadadadadadadadadad
-adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafadadadaitCXWadafaGbmboaedCdIdTaGadadadadaEaTaPaUaEadadadcMcMcMcMcMcMcMcMadadadadcTaCaiadadadaVbdaWaXaYaZbjaVadadadadadadadadadadadadadadadadadad
-adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafafafaeafcaafaDaGbmdIdUdCeckYaGadadadadaEbaaPbbbcadadadcMacNnbebfbgbicMadadadadaeaCaeadadadaVbkevbubdbdbvaVadadadadadadadadadadadadadadadadadad
-adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadzhafafazzhafafafazafdHafaDafaGdLcjaidLdQcIaGadadadadaEaTeocJbcadadadcMbpNnbqbsbtbzcMadadadadaecTaCadadadaVbdbwbDbEbdbFaVadadadadadadadadadadadadadadadadadad
-adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafafafafadadadafafafadadcaafadaGewApexNKYJYJaGadadadadaEbxaPbyaEadadadcMbANnbBNnbCbLcMadadadadcTbGaiadadadaVaVaVcKcPcPcQaVadadadadadadadadadadadadadadadadadad
-adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafadadadadadadadadadafafadaiafaiafafcLbIgWeycaaGadadadadaEbJaPbKaEadadadcMbMdNbObPbUNncMadadadadaeaiaeadadadadadaVaVbYbYbYaVadadadadadadadadadadadadadadadadadad
-adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafGYafafcaaeezbReAEabSaGadadadadaEaEbTaEaEadadadcMbVdONnbXnOdZcMadadadadaeaeaiadadadadadadaVbYbYbdaVadadadadadadadadadadadadadadadadadad
-adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadaiguazaiafaiaiafaeafaiaiaeaiaicaaecMcMcMmMmMcMcMcMadadadadgkgkgkadadadadadadaVzHcScSaVadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafadadadaitCXWadafaGbmboaedCdIdTaGadadadadaEaTaPaUaEadadadaVaVaVaVaVaVaVaVadadadadcTaCaiadadadaVbdaWaXaYaZbjaVadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafafafaeafcaafaDaGbmdIdUdCeckYaGadadadadaEbaaPbbbcadadadaVacbdbebfbgbiaVadadadadaeaCaeadadadaVbkevbubdbdbvaVadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadzhafafazzhafafafazafdHafaDafaGdLcjaidLdQcIaGadadadadaEaTeocJbcadadadaVbpbdbqbsbtbzaVadadadadaecTaCadadadaVbdbwbDbEbdbFaVadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafafafafadadadafafafadadcaafadaGewApexNKYJYJaGadadadadaEbxaPbyaEadadadaVbAbdbBbdbCbLaVadadadadcTbGaiadadadaVaVaVcKcPcPcQaVadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafadadadadadadadadadafafadaiafaiafafcLbIgWeycaaGadadadadaEbJaPbKaEadadadaVbMbObPbUbVbdaVadadadadaeaiaeadadadadadaVaVbYbYbYaVadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadafafGYafafcaaeezbReAEabSaGadadadadaEaEbTaEaEadadadaVbXcMbddNbYdOaVadadadadaeaeaiadadadadadadaVbYbYbdaVadadadadadadadadadadadadadadadadadad
+adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadaiguazaiafaiaiafaeafaiaiaeaiaicaaeaVaVaVcScSaVaVaVadadadadgkgkgkadadadadadadaVzHcScSaVadadadadadadadadadadadadadadadadadad
 adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadkYafeyafaiazaiafccaiaeafaicaaiaeeuaiaiaiyfyfaeaeaieBeBaiaeaiaeaiaeaiaiaeaiaiepaiaiaiadadadadadadadadadadadadadadadadadadad
 adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadaeaeaiadadadadadadadadadadadadadadadadadadadadadadadadadadadadad
 adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadcdcdcdcdcdcbcdcdcdcdcdadadadadadadadadadadadadadadadadadadadadadadadadad
