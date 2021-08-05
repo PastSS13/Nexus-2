@@ -92,6 +92,7 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	if(!mob) //this doesn't happen
 		return
 
+	webhook_send_ahelp(key, msg)
 	//generate keywords lookup
 	msg = generate_ahelp_key_words(mob, msg)
 

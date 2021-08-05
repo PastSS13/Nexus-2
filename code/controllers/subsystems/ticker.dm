@@ -37,6 +37,7 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<span class='info'><B>Добро пожаловать в лобби!</B></span>")
 	to_world("Настройте своего персонажа и нажмите \"Ready\" для вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
+	webhook_send_roundstatus("lobby")
 	return ..()
 
 /datum/controller/subsystem/ticker/fire(resumed = 0)
@@ -98,6 +99,7 @@ SUBSYSTEM_DEF(ticker)
 				CreateModularRecord(H)
 
 	callHook("roundstart")
+	webhook_send_roundstatus("ingame")
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup() // Drafts antags who don't override jobs.
@@ -121,6 +123,7 @@ SUBSYSTEM_DEF(ticker)
 	var/mode_finished = mode_finished()
 
 	if(mode_finished && game_finished())
+		webhook_send_roundstatus("ending")
 		if(!config.ooc_allowed)
 			config.ooc_allowed = 1
 			to_world("<B>OOC чат включен!</B>")

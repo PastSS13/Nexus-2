@@ -52,3 +52,4 @@
 			receive_communication(C, target, "<font color='[C.prefs.ooccolor]'><span class='ooc'>[sent_message]</font></span>")
 		else
 			receive_communication(C, target, "<span class='ooc'><span class='[ooc_style]'>[sent_message]</span></span>")
+	webhook_send_ooc(C.key, message)

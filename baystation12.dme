@@ -3174,6 +3174,7 @@
 #include "code\modules\ventcrawl\ventcrawl_verb.dm"
 #include "code\modules\webhooks\__webhook_sanitize_inf.dm"
 #include "code\modules\webhooks\_webhook.dm"
+#include "code\modules\webhooks\webhook.dm"
 #include "code\modules\webhooks\webhook_custom_event.dm"
 #include "code\modules\webhooks\webhook_roundend.dm"
 #include "code\modules\webhooks\webhook_roundstart.dm"

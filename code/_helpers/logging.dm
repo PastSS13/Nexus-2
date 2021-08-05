@@ -128,6 +128,7 @@
 //This replaces world.log so it displays both in DD and the file
 /proc/log_world(text)
 	to_world_log(text) //this comes before the config check because it can't possibly runtime
+	webhook_send_runtime(text)
 	if(config.log_world_output)
 		game_log("DD_OUTPUT", text)
 
