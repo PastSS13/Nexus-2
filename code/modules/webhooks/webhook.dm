@@ -26,6 +26,10 @@
 	var/list/query = list("ckey" = ckey, "message" = message)
 	webhook_send("ahelpmessage", query)
 
+/proc/webhook_send_pm(var/sender, var/receiver, var/message)
+	var/list/query = list("sender" = sender, "receiver" = receiver, "message" = message)
+	webhook_send("pmmessage", query)
+
 /proc/webhook_send_garbage(var/message)
 	var/list/query = list("message" = message)
 	webhook_send("garbage", query)
