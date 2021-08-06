@@ -28,6 +28,15 @@ GLOBAL_VAR(href_logfile)
 		t = round(t / l)
 	return 1
 
+proc/valid_webhook(input)
+	var/list/data = params2list(input)
+	if(!config.webhook_url || !config.webhook_key || !("key" in data))
+		return FALSE
+	if(data["key"]!=config.webhook_key)
+		return FALSE
+	return data
+
+
 // Find mobs matching a given string
 //
 // search_string: the string to search for, in params format; for example, "some_key;mob_name"
@@ -248,6 +257,42 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 			L["revision"] = "unknown"
 
 		return list2params(L)
+
+	else if(T == "who")
+		var/msg = "Текущие игроки:\n"
+		var/n = 0
+		for(var/client/C in GLOB.clients)
+			n++
+			msg += "\t[C.key]\n"
+		msg += "Всего: [n]"
+		return msg
+
+	else if(T == "adminwho")
+		var/msg = "Педали:\n"
+		for(var/client/C in GLOB.admins)
+			msg += "\t[C] - [C.holder.rank]"
+			msg += "\n"
+		return msg
+
+	/* * * * * * * *
+	* Discord Bot Topic Calls
+	* * * * * * * */
+
+	else if(copytext(T,1,5) == "asay")
+		if(!valid_webhook(T))
+			return
+		var/list/input = valid_webhook(T)
+		for(var/client/C in GLOB.admins)
+			if(R_ADMIN & C.holder.rights)
+				to_chat(C, "<span class='admin_channel'>" + create_text_tag("admin", "ADMIN:", C) + " <span class='name'>[input["admin"]]</span>(DISCORD): <span class='message'>[input["asay"]]</span></span>")
+
+	else if(copytext(T,1,4) == "ooc")
+		if(!valid_webhook(T))
+			return
+		var/list/input = valid_webhook(T)
+		for(var/client/C in GLOB.clients)
+			to_chat(C, "<span class='ooc'><span class='everyone'>" + create_text_tag("dooc", "Discord -> DOOC:", C) + " <EM>[input["ckey"]]:</EM> <span class='message'>[input["ooc"]]</span></span></span>")
+
 
 	/* * * * * * * *
 	* Admin Topic Calls

@@ -8,6 +8,7 @@
 	msg = emoji_parse_by_user(msg, src)//inf
 	if(!msg)	return
 
+	webhook_send_asay(key_name(src), msg)
 	log_admin("ADMIN: [key_name(src)] : [msg]")
 
 	if(check_rights(R_ADMIN,0))

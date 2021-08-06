@@ -23,6 +23,7 @@
 		usr.emote("me",usr.emote_type,message)
 	else
 		usr.emote(message)
+	webhook_send_me(key, message)
 
 /mob/proc/say_dead(var/message)
 	communicate(/decl/communication_channel/dsay, client, message)

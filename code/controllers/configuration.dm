@@ -228,6 +228,9 @@ var/list/gamemode_cache = list()
 	var/motd = ""
 	var/event = ""
 
+	var/webhook_url
+	var/webhook_key
+
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for (var/T in L)
@@ -397,6 +400,12 @@ var/list/gamemode_cache = list()
 
 				if ("vote_period")
 					config.vote_period = text2num(value)
+
+				if("webhook_url")
+					config.webhook_url = value
+
+				if("webhook_key")
+					config.webhook_key = value
 
 				if ("vote_autotransfer_initial")
 					var/list/values = splittext(value, ";")
