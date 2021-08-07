@@ -9,7 +9,7 @@
 	to_chat(victim, "Охрана судна укомплектована сотрудниками полиции, подразделением Судей, а также отрядом регулярной армии ЦПСС .")
 	to_chat(victim, "В остальных отделах также присутствуют подрядчики. Их наняли как выдающихся специалистов в своей области, что превзошли корпоративного кандидата. Как правило, они либо работают на себя (civilian), либо на другую компанию (contractor). Полезные ссылки:")
 	to_chat(victim, "<a href=\"https://nd-rp-ss13.fandom.com/ru/wiki/NEXT_DAY_RP_SS13_wiki\">ND WIKI</a>.")
-	to_chat(victim, "<br><span class='danger'>Внимание!</span> На данный момент существует баг, из-за которого слоты с персонажами могут не загрузиться. Если он произошел - зайдите во вкладку OOC и нажмите 'Fix characters load'.")
+	to_chat(victim, "<a href=\"https://discord.gg/RAfDfcmRK8\">ND DISCORD</a>.")
 
 /datum/map/sierra/send_welcome()
 	var/welcome_text = "<center><img src = sierralogo.png /><br /><font size = 3><b>NSV Sierra</b> Показания Сенсоров:</font><hr />"
