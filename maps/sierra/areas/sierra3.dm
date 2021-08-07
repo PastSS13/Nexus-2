@@ -349,7 +349,7 @@
 	req_access = list(list(access_forensics_lockers, access_security))
 
 /area/security/range
-	name = "First Deck - Security - Cadets"
+	name = "First Deck - Security - shoot range"
 	icon_state = "security"
 
 /area/security/nuke_storage
