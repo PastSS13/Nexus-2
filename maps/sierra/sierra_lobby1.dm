@@ -2,10 +2,12 @@
 	lobby_screens = list('infinity/title_screens/ND.png')
 	lobby_tracks = list(
 		/decl/audio/track/codebrain,
-		/decl/audio/track/gneiss,
-		/decl/audio/track/Quantum,
-		/decl/audio/track/getset,
-		/decl/audio/track/intruder,
-		/decl/audio/track/NightAtTheCitadel,
-		/decl/audio/track/owl,
+		/decl/audio/track/hard,
+		/decl/audio/track/eclipse,
+		/decl/audio/track/future,
+		/decl/audio/track/humans,
+		/decl/audio/track/night,
+		/decl/audio/track/assault,
+		/decl/audio/track/death
+
 	)
