@@ -244,7 +244,6 @@
 					/obj/item/clothing/head/fedora = 2,
 					/obj/item/clothing/head/festive = 4,
 					/obj/item/clothing/head/flatcap = 2,
-					/obj/item/clothing/head/gentle_cap = 2,
 					/obj/item/clothing/head/that = 2,
 					/obj/item/clothing/under/assistantformal = 2,
 					/obj/item/clothing/under/blackjumpskirt = 2,
