@@ -1,7 +1,7 @@
 #if !defined(using_map_DATUM)
 
 	#include "sierra_announcements.dm"
-	#include "sierra_antagonism.dm"
+//	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"
 	#include "sierra_elevator.dm"
 	#include "sierra_holodecks.dm"
@@ -39,8 +39,8 @@
 	#include "datums/supplypacks/security.dm"
 	#include "datums/supplypacks/science.dm"
 
-	#include "game/antagonist/languages.dm"
-	#include "game/antagonist/objective.dm"
+//	#include "game/antagonist/languages.dm"
+//	#include "game/antagonist/objective.dm"
 
 	#include "items/cards_ids.dm"
 	#include "items/documents.dm"

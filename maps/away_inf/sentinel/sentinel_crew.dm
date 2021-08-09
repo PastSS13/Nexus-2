@@ -221,7 +221,7 @@
 
 /* BRANCH & RANKS
  * =======
- 
+
 /datum/mil_branch/scgdf
 	name = "Sol Central Government Defence Forces"
 	name_short = "SCGDF"
@@ -235,7 +235,7 @@
 
 /datum/job/submap/sentinel_crew/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
 	. = ..(H, alt_title, branch, grade)
-	
+
 	var/milbranches = list(
 		"Malish-Katish" = list(
 			"Mero'ta-Ketish",
@@ -322,7 +322,7 @@
 	head = /obj/item/clothing/head/beret/solgov/fleet/branch/fifth
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/officer/pilot1/away_solpatrol
 	belt = /obj/item/storage/belt/holster/general/away_solpatrol
-	gloves = /obj/item/clothing/gloves/thick/duty/rivalgloves
+
 
 #undef PATROL_OUTFIT_JOB_NAME
 #undef WEBHOOK_SUBMAP_LOADED_SOL

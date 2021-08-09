@@ -3,7 +3,7 @@
 	additional_header = "<th>Minimum Players</th>"
 	win_x = 500
 	win_y = 1100
-	result_length = 3
+	result_length = 1
 
 /datum/vote/gamemode/can_run(mob/creator, automatic)
 	if(!automatic && (!config.allow_vote_mode || !isadmin(creator)))

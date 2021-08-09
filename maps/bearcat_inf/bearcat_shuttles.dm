@@ -54,7 +54,7 @@
 	range = 1
 	fuel_consumption = 3
 	move_time = 25
-	warmup_time = 5
+	warmup_time = 2
 
 /obj/machinery/computer/shuttle_control/explore/bearcat
 	name = "shuttle console"
