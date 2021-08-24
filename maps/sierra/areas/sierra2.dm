@@ -6,6 +6,10 @@
 	name = "Second Deck - Hallway - Central"
 	icon_state = "hallC3"
 
+/area/hallway/primary/seconddeck/atrium_rest
+	name = "Second Deck - Hallway - atrium_rest"
+	icon_state = "hallC3"
+
 /area/hallway/primary/seconddeck/aft
 	name = "Second Deck - Hallway - Aft"
 	icon_state = "hallA"
@@ -42,8 +46,12 @@
 	name = "Second Deck - Maintenance - Port"
 	icon_state = "pmaint"
 
+/area/maintenance/seconddeck/restaft
+	name = "Second Deck - Maintenance - restaft"
+	icon_state = "pmaint"
+
 /area/maintenance/seconddeck/aftstarboard
-	name = "Second Deck - Maintenance - Aft-Starboard "
+	name = "Second Deck - Maintenance - Aft-Starboard"
 	icon_state = "asmaint"
 
 /area/maintenance/seconddeck/aftport
@@ -121,12 +129,6 @@
 	icon_state = "heads_ce"
 	name = "Second Deck - Command - CE's Office"
 	req_access = list(access_ce)
-
-/area/bridge
-	name = "Second Deck - Bridge"
-	icon_state = "bridge"
-	req_access = list(access_bridge)
-	ambience = list('infinity/sound/SS2/ambience/ambbridge.wav')
 
 /area/bridge/nano
 	icon = 'infinity/icons/turf/areas.dmi'
@@ -265,6 +267,10 @@
 	sound_env = SMALL_ENCLOSED
 	req_access = list(list(access_bar, access_kitchen))
 
+/area/crew_quarters/rest_aft_rooms
+	name = "Second Deck - Living - rest aft rooms"
+	icon_state = "garden"
+
 /area/crew_quarters/galley
 	name = "Second Deck - Service - Galley"
 	icon_state = "kitchen"
@@ -278,11 +284,6 @@
 /area/crew_quarters/cafe
 	name = "Second Deck - Living - Cafe"
 	icon_state = "cafeteria"
-
-/area/crew_quarters/sauna
-	name = "Second Deck - Living - Sauna"
-	icon_state = "sauna"
-	sound_env = SMALL_ENCLOSED
 
 /area/grove/theta // /area/ai_abadoned
 	name = "Second Deck - Grove - Theta"
@@ -341,15 +342,6 @@
 /area/crew_quarters/sleep/bunk_big/room_two
 	name = "Second Deck - Living - Dormitory - Big Two"
 	icon_state = "Sleep"
-
-/area/crew_quarters/sleep/cryo
-	name = "Second Deck - Living - Cryogenic Storage"
-	icon = 'infinity/icons/turf/areas.dmi'
-	icon_state = "cryo"
-
-/area/crew_quarters/sleep/cryo/south
-	name = "Second Deck - Living - Cryogenic Storage - South"
-	icon_state = "cryo_south"
 
 /area/crew_quarters/adherent
 	name = "Second Deck - Living - Adherent Maintenence"

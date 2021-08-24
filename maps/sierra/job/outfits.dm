@@ -198,7 +198,8 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/security/warden
 	name = OUTFIT_JOB_NAME("Warden - Sierra")
-	uniform = /obj/item/clothing/under/rank/warden/corp
+	head = /obj/item/clothing/head/soft/solgov/fleet
+	uniform = /obj/item/clothing/under/solgov/fleet/special
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_types = list(/obj/item/card/id/sierra/crew/security/warden)
 
@@ -213,7 +214,8 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/security/officer
 	name = OUTFIT_JOB_NAME("Security Officer - Sierra")
-	uniform = /obj/item/clothing/under/rank/security/corp
+	head = /obj/item/clothing/head/soft/solgov/fleet
+	uniform = /obj/item/clothing/under/solgov/fleet/special
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_types = list(/obj/item/card/id/sierra/crew/security)
 

@@ -55,3 +55,5 @@
 	var/datum/chatOutput/chatOutput
 
 	var/fullscreen = FALSE
+
+	mouse_pointer_icon = 'icons/stalker/cursors.dmi'

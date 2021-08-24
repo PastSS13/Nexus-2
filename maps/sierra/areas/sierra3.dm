@@ -42,6 +42,10 @@
 	name = "First Deck - Hallway - Fore"
 	icon_state = "hallF"
 
+/area/hallway/primary/firstdeck/atrium
+	name = "First Deck - Atrium"
+	icon_state = "hallA"
+
 /area/hallway/primary/firstdeck/center
 	name = "First Deck - Hallway - Central"
 	icon_state = "hallC1"
@@ -101,6 +105,12 @@
 	name = "First Deck - Abandoned Weapon Slot"
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_gun"
+
+/area/bridge
+	name = "first Deck - Bridge"
+	icon_state = "bridge"
+	req_access = list(access_bridge)
+	ambience = list('infinity/sound/SS2/ambience/ambbridge.wav')
 
 /* ENGINEERING AREAS
  * =================
@@ -274,8 +284,8 @@
  * ==========
  */
 /area/crew_quarters/sleep/cryo/upper
-	name = "First Deck - Living - Cryogenic Storage - Upper"
-	icon_state = "cryo_up"
+	name = "First Deck - Living - security checkpoint"
+	icon_state = "security"
 
 /area/crew_quarters/dungeon_master_lounge
 	name = "First Deck - Living Room"
@@ -283,6 +293,20 @@
 
 /area/crew_quarters/lounge/upper
 	name = "First Deck - Living - Library"
+
+/area/crew_quarters/sauna
+	name = "First Deck - Living - Sauna"
+	icon_state = "sauna"
+	sound_env = SMALL_ENCLOSED
+
+/area/crew_quarters/sleep/cryo
+	name = "first - Living - Cryogenic Storage"
+	icon = 'infinity/icons/turf/areas.dmi'
+	icon_state = "cryo"
+
+/area/crew_quarters/sleep/cryo/south
+	name = "first Deck - Living - Cryogenic Storage - South"
+	icon_state = "cryo_south"
 /*
 /area/crew_quarters/sleep/cryo/first_deck
 	name = "First Deck - Cryogenic Storage"

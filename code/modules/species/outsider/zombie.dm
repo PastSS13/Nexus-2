@@ -154,10 +154,10 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/species/zombie/handle_death(mob/living/carbon/human/H)
 	H.stat = DEAD //Gotta confirm death for some odd reason
 	playsound(H, 'sound/hallucinations/wail.ogg', 30, 1)
-	handle_death_infection(H)
+//	handle_death_infection(H)//
 	return TRUE
 
-/datum/species/zombie/proc/handle_death_infection(mob/living/carbon/human/H)
+/*/datum/species/zombie/proc/handle_death_infection(mob/living/carbon/human/H)
 	var/list/victims = hearers(rand(1, 2), H)
 	for(var/mob/living/carbon/human/M in victims)
 		if (H == M || M.is_species(SPECIES_ZOMBIE))
@@ -174,7 +174,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 			M.reagents.add_reagent(/datum/reagent/zombie, 0.5) //Infect 'em
 
 	if (H && H.stat != CONSCIOUS)
-		addtimer(CALLBACK(src, .proc/handle_death_infection, H), 1 SECOND)
+		addtimer(CALLBACK(src, .proc/handle_death_infection, H), 1 SECOND)*/
 
 /datum/species/zombie/handle_npc(mob/living/carbon/human/H)
 	H.resting = FALSE
@@ -295,7 +295,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	var/vuln = 1 - target.get_blocked_ratio(zone, TOX, damage_flags = DAM_BIO) //Are they protected from bites?
 	if (vuln > 0.05)
 		if (prob(vuln * 100)) //Protective infection chance
-			if (prob(min(100 - target.get_blocked_ratio(zone, BRUTE) * 100, 70))) //General infection chance
+			if (prob(min(100 - target.get_blocked_ratio(zone, BRUTE) * 100, 60))) //General infection chance
 				target.reagents.add_reagent(/datum/reagent/zombie, 1) //Infect 'em
 
 

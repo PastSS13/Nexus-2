@@ -1,7 +1,7 @@
 
 /client/New()
 	..()
-	dir = WEST
+	dir = NORTH
 
 /client/verb/spinleft()
 	set name = "Spin View CCW"

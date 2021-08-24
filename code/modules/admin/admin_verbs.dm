@@ -169,7 +169,7 @@ var/list/admin_verbs_server = list(
 	// /client/proc/check_customitem_activity,
 	/client/proc/update_server,
 	/client/proc/cmd_toggle_admin_help,
-	/client/proc/observe_delay, 
+	/client/proc/observe_delay,
 	/datum/admins/proc/toggleevent,
 	/client/proc/cmd_set_station_date,
 //[/INF],
@@ -177,6 +177,7 @@ var/list/admin_verbs_server = list(
 var/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,
 	/datum/admins/proc/jump_to_fluid_active,
+	/client/proc/SetTimeOfDay,
 	/client/proc/cmd_admin_list_open_jobs,
 	/client/proc/ZASSettings,
 	/client/proc/cmd_debug_make_powernets,
@@ -449,6 +450,30 @@ var/list/admin_verbs_xeno = list(
 			if(!body.key)
 				body.key = "@[key]"	//Haaaaaaaack. But the people have spoken. If it breaks; blame adminbus
 		SSstatistics.add_field_details("admin_verb","O") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/SetTimeOfDay()
+	set name = "Set Time of Day"
+	set category = "Stalker"
+
+	var/daytime = input(usr, "Choose time of day to set)", "S.T.A.L.K.E.R.") as null|anything in list("Morning", "Day", "Evening", "Night")
+
+	if(!daytime)
+		return
+
+	switch(daytime)
+		if("Morning")
+			daytime = 1
+		if("Day")
+			daytime = 2
+		if("Evening")
+			daytime = 3
+		if("Night")
+			daytime = 4
+
+
+	usr << "<span class='interface'>Time of day successfully updated.</span>"
+	log_admin("[key_name(usr)] changed time of day to [daytime].")
+	message_admins("[key_name_admin(usr)] changed time of day to [daytime].")
 
 
 /client/proc/invisimin()
@@ -957,3 +982,5 @@ var/list/admin_verbs_xeno = list(
 	T.add_spell(new S)
 	SSstatistics.add_field_details("admin_verb","GS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_and_message_admins("gave [key_name(T)] the spell [S].")
+
+
