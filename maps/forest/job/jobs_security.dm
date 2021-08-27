@@ -1,30 +1,26 @@
 /datum/job/warden
-	title = "Senior Judge"
+	title = "Ветеран красных"
 	department = "Security"
 	department_flag = SEC
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 50
+	spawn_positions = 50
 	supervisors = "Главой Охраны"
-	economic_power = 8
-	minimal_player_age = 6
 	ideal_character_age = 35
-	alt_titles = list(
-		"Judge sergeant",
-		)
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/warden
-	allowed_branches = list(/datum/mil_branch/employee)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
+//	outfit_type =
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_HAULING	  = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_HAULING	  = SKILL_ADEPT,
+	                    SKILL_COMBAT      = SKILL_ADEPT,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 25
+	skill_points = 15
 
 	access = list(access_seceva, access_guard, access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -33,15 +29,6 @@
 
 	minimal_access = list()
 
-	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
-							 /datum/computer_file/program/camera_monitor)
-	good_genome_prob = 40
-
-/datum/job/warden/get_description_blurb()
-	return "Старший судья отвечает за наблюдение, допрос, уход и безопасность заключенных, арестованных судьями.\
-	Как следует из названия, он несет ответственность за наблюдение за различными камерами и шкафами со снаряжением, доступным персоналу безопасности,\
-	а также за надлежащую организацию проведения допросов подозреваемых и наказаний виновных.\
-	Это включает в себя обновление их записей в базах данных, а также исполнение наказаний, в виде помещения в камеру."
 
 /datum/job/detective
 	title = "Criminal Investigator"
@@ -88,26 +75,23 @@
 	Его основная миссия - выяснить, кто совершил преступление и собрать все имеющиеся доказательства."
 
 /datum/job/officer
-	title = "Judge"
+	title = "Ветеран Коалиции"
 	department = "Security"
 	department_flag = SEC
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 50
+	spawn_positions = 50
 	supervisors = "Главой Охраны и Старшим судьей"
-	economic_power = 6
-	minimal_player_age = 10
-	ideal_character_age = 25
-	alt_titles = list("policeman")
+	ideal_character_age = 35
 
 	skill_points = 20
 
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/officer
-	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
-	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
+//	outfit_type =
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_ADEPT,
+	                    SKILL_HAULING     = SKILL_ADEPT,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
@@ -119,13 +103,4 @@
 			            access_eva, access_sec_doors, access_hangar)
 
 	minimal_access = list()
-
-	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
-							 /datum/computer_file/program/camera_monitor)
-	good_genome_prob = 15
-
-/datum/job/officer/get_description_blurb()
-	return "Судья - это основная должность отдела безопасности. Судьи представляют собой первую линию защиты корабля от криминальных элементов и враждебных форм жизни. \
-	 Со своими надежными дубинкой и тазером, Судья преследует различных нарушителей закона на судне и отправляет их в бриг отбывать заслуженное наказание. \
-	 Главной задачей судей является предотвращение ущерба персоналу корабля и собственности корпорации, и судья который не ставит эти обязанности для себя на первое место имеет мало шансов задержаться на этой работе."
 

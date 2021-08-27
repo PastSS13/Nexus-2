@@ -619,7 +619,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	s += "Discord"
 	s += "</a>"
 	s += ")"
-	s += " A FULL RP russian server with modified Bay12 code."
+	s += " A GRIMDARK FULL RP russian server with modified Bay12 code."
 //	s += "<br><b>Map:</b> [station_name()]"
 	var/n = 0
 	for (var/mob/M in GLOB.player_list)

@@ -1,5 +1,5 @@
 /datum/job/captain
-	title = "Captain"
+	title = "Capitan"
 	department = "Командный"
 	supervisors = "Центральному Командованию"
 	department_flag = COM
