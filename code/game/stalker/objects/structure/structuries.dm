@@ -4,7 +4,7 @@
 
 
 /obj/structure/table/stalker/wood
-	desc = "Обычный деревянный слегка пошарпанный стол."
+	desc = "РћР±С‹С‡РЅС‹Р№ РґРµСЂРµРІСЏРЅРЅС‹Р№ СЃР»РµРіРєР° РїРѕС€Р°СЂРїР°РЅРЅС‹Р№ СЃС‚РѕР»."
 	 // eng_desc = "Simple table."
 	icon = 'icons/obj/structures/stol_stalker.dmi'
 	icon_state = "stol"
@@ -13,21 +13,21 @@
 
 
 /obj/structure/table/stalker/wood/bar
-	desc = "Самодельная барная стойка"
+	desc = "РЎР°РјРѕРґРµР»СЊРЅР°СЏ Р±Р°СЂРЅР°СЏ СЃС‚РѕР№РєР°"
 	icon = 'icons/obj/structures/stol_stalker_bar.dmi'
 	icon_state = "bar"
 
 
 
 /obj/structure/table/stalker/wood/bar100rentgen
-	desc = "Качественная барная стойка"
+	desc = "РљР°С‡РµСЃС‚РІРµРЅРЅР°СЏ Р±Р°СЂРЅР°СЏ СЃС‚РѕР№РєР°"
 	icon = 'icons/stalker/structure/bartables.dmi'
 	icon_state = "table"
 
 
 /obj/structure/stalker/okno
 	name = "Window"
-	desc = "Старое деревянное окно."
+	desc = "РЎС‚Р°СЂРѕРµ РґРµСЂРµРІСЏРЅРЅРѕРµ РѕРєРЅРѕ."
 	 // eng_desc = "Old wooden window."
 	icon = 'icons/stalker/decor2.dmi'
 

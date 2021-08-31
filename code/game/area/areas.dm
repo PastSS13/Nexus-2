@@ -6,7 +6,35 @@
 /area
 	var/global/global_uid = 0
 	var/uid
+	var/blowout = 0
 	var/area_flags
+	var/ambient_music_cooldown				= 600
+	var/ambient_environment_cooldown		= 660
+	var/list/ambient_background_cooldown = null
+	var/list/ambient_music = list(	'sound/stalker/ambience/amb01.ogg','sound/stalker/ambience/amb02.ogg',
+									'sound/stalker/ambience/amb03.ogg','sound/stalker/ambience/amb04.ogg',
+									'sound/stalker/ambience/amb05.ogg','sound/stalker/ambience/amb06.ogg',
+									'sound/stalker/ambience/amb07.ogg','sound/stalker/ambience/amb08.ogg',
+									'sound/stalker/ambience/amb09.ogg','sound/stalker/ambience/amb10.ogg',
+									'sound/stalker/ambience/amb11.ogg','sound/stalker/ambience/amb12.ogg',
+									'sound/stalker/ambience/amb13.ogg','sound/stalker/ambience/amb15.ogg',
+									'sound/stalker/ambience/amb16.ogg','sound/stalker/ambience/amb17.ogg',
+									'sound/stalker/ambience/amb20.ogg','sound/stalker/ambience/amb21.ogg',
+									'sound/stalker/ambience/amb22.ogg','sound/stalker/ambience/amb23.ogg',
+									'sound/stalker/ambience/amb24.ogg','sound/stalker/ambience/amb25.ogg',
+									'sound/stalker/ambience/amb26.ogg','sound/stalker/ambience/amb27.ogg',
+									'sound/stalker/ambience/amb28.ogg','sound/stalker/ambience/amb29.ogg',
+									'sound/stalker/ambience/amb30.ogg','sound/stalker/ambience/amb31.ogg',
+									'sound/stalker/ambience/amb32.ogg','sound/stalker/ambience/amb33.ogg',
+									'sound/stalker/ambience/amb34.ogg','sound/stalker/ambience/amb35.ogg',
+									'sound/stalker/ambience/amb36.ogg','sound/stalker/ambience/amb37.ogg',
+									'sound/stalker/ambience/amb38.ogg')
+	var/list/ambient_environment = null
+	var/list/ambient_environment_night = null
+	var/list/ambient_background = null
+	var/environment = 0
+	var/safezone = 0
+	var/controlled_by = null
 
 /area/New()
 	icon_state = ""
@@ -285,7 +313,24 @@ inf*/
 	if(hum)
 		if(!L.client.ambience_playing)
 			L.client.ambience_playing = 1
-			L.playsound_local(T,sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 10, channel = GLOB.environment_sound_channel))
+			L.playsound_local(T,sound('sound/stalker/ambience/amb01.ogg','sound/stalker/ambience/amb02.ogg',
+									'sound/stalker/ambience/amb03.ogg','sound/stalker/ambience/amb04.ogg',
+									'sound/stalker/ambience/amb05.ogg','sound/stalker/ambience/amb06.ogg',
+									'sound/stalker/ambience/amb07.ogg','sound/stalker/ambience/amb08.ogg',
+									'sound/stalker/ambience/amb09.ogg','sound/stalker/ambience/amb10.ogg',
+									'sound/stalker/ambience/amb11.ogg','sound/stalker/ambience/amb12.ogg',
+									'sound/stalker/ambience/amb13.ogg','sound/stalker/ambience/amb15.ogg',
+									'sound/stalker/ambience/amb16.ogg','sound/stalker/ambience/amb17.ogg',
+									'sound/stalker/ambience/amb20.ogg','sound/stalker/ambience/amb21.ogg',
+									'sound/stalker/ambience/amb22.ogg','sound/stalker/ambience/amb23.ogg',
+									'sound/stalker/ambience/amb24.ogg','sound/stalker/ambience/amb25.ogg',
+									'sound/stalker/ambience/amb26.ogg','sound/stalker/ambience/amb27.ogg',
+									/*'sound/stalker/ambience/amb28.ogg',*/'sound/stalker/ambience/amb29.ogg',
+									'sound/stalker/ambience/amb30.ogg','sound/stalker/ambience/amb31.ogg',
+									'sound/stalker/ambience/amb32.ogg','sound/stalker/ambience/amb33.ogg',
+									'sound/stalker/ambience/amb34.ogg','sound/stalker/ambience/amb35.ogg',
+									'sound/stalker/ambience/amb36.ogg','sound/stalker/ambience/amb37.ogg',
+									'sound/stalker/ambience/amb38.ogg', repeat = 1, wait = 0, volume = 10, channel = GLOB.environment_sound_channel))
 	else
 		if(L.client.ambience_playing)
 			L.client.ambience_playing = 0

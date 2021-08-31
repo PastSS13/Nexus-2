@@ -303,10 +303,8 @@
 
 /obj/random/handgun/spawn_choices()
 	return list(/obj/item/gun/projectile/pistol/sec = 3,
-				/obj/item/gun/energy/gun = 2,
 				/obj/item/gun/projectile/pistol/military/alt = 1,
 				/obj/item/gun/projectile/pistol/holdout = 2,
-				/obj/item/gun/energy/retro = 1,
 				/obj/item/gun/projectile/pistol/throwback = 1)
 
 /obj/random/ammo

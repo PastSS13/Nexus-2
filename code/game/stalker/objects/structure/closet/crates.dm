@@ -4,12 +4,12 @@
 
 /obj/structure/closet/crate/stalker/blue
 	name = "crate"
-	desc = "Обычный железный ящик."
+	desc = "РћР±С‹С‡РЅС‹Р№ Р¶РµР»РµР·РЅС‹Р№ СЏС‰РёРє."
 	icon_state = "freezer"
 
 /obj/structure/closet/crate/stalker/blue/stash
 	name = "stash"
-	desc = "В таких ящиках обычно прячут хабар. Замок сгнил."
+	desc = "Р’ С‚Р°РєРёС… СЏС‰РёРєР°С… РѕР±С‹С‡РЅРѕ РїСЂСЏС‡СѓС‚ С…Р°Р±Р°СЂ. Р—Р°РјРѕРє СЃРіРЅРёР»."
 	var/lootcount = 1		//how many items will be spawned
 	var/lootdoubles = 1		//if the same item can be spawned twice
 	var/list/loot = list()
@@ -46,24 +46,24 @@
 
 /obj/structure/closet/stalker/shkaf
 	name = "closet"
-	desc = "Обычный железный шкафчик."
+	desc = "РћР±С‹С‡РЅС‹Р№ Р¶РµР»РµР·РЅС‹Р№ С€РєР°С„С‡РёРє."
 	icon = 'icons/stalker/lohweb/closet.dmi'
 	icon_state = "temergency"
 
 /obj/structure/closet/stalker/shkaf/wood
 	name = "closet"
-	desc = "Обычный шкафчик."
+	desc = "РћР±С‹С‡РЅС‹Р№ С€РєР°С„С‡РёРє."
 	icon = 'icons/stalker/lohweb/closet.dmi'
 	icon_state = "cabinet0"
 
 /obj/structure/closet/stalker/shkaf/wood2
 	name = "closet"
-	desc = "Обычный шкафчик."
+	desc = "РћР±С‹С‡РЅС‹Р№ С€РєР°С„С‡РёРє."
 	icon = 'icons/stalker/lohweb/closet.dmi'
 	icon_state = "cabinet1"
 
 /obj/structure/closet/stalker/shkaf/wood3
 	name = "closet"
-	desc = "Обычный шкафчик."
+	desc = "РћР±С‹С‡РЅС‹Р№ С€РєР°С„С‡РёРє."
 	icon = 'icons/stalker/lohweb/closet.dmi'
 	icon_state = "cabinet"

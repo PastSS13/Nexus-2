@@ -2,18 +2,21 @@
 #define SOUTH_EDGING	"south"
 #define EAST_EDGING		"east"
 #define WEST_EDGING		"west"
+var/slowdown
+var/environment_type = null
+var/icon_plating = null
+var/dug = null
+var/overlay_priority = null
 
 /turf/simulated/floor/plating/asteroid/snow/lite
 	name = "snow"
-	desc = "Выгл&#255;дит холодным."
+	desc = "Выглядит холодным."
 	icon = 'icons/turf/snow.dmi'
-	baseturf = /turf/simulated/floor/plating/asteroid/snow
 	icon_state = "snow"
-	icon_plating = "snow"
+
 	temperature = 293
-	slowdown = 4
-	environment_type = "snow"
-	dug = 1
+
+
 
 /obj/structure/grille/stalker
 	desc = "Хороший, крепкий железный забор."
@@ -22,14 +25,10 @@
 	icon_state = "bars"
 	density = 1
 	anchored = 1
-	flags = CONDUCT
 	layer = 2.9
-	health = 10000000
+	health = 1000
 
 /obj/structure/grille/stalker/ex_act(severity, target)
-	return
-
-/obj/structure/grille/stalker/attack_paw(mob/user)
 	return
 
 /obj/structure/grille/stalker/attack_hand(mob/living/user)
@@ -43,10 +42,7 @@
 /obj/structure/grille/stalker/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)
 		return
-	..()
-	if((Proj.damage_type != STAMINA)) //Grilles can't be exhausted to death
-		return
-	return
+
 
 /obj/structure/grille/stalker/attackby(obj/item/weapon/W, mob/user, params)
 	return
@@ -56,7 +52,7 @@
 	return
 
 /obj/structure/grille/stalker/wood
-	desc = "Хороший, старый дерев&#255;нный забор."
+	desc = "Хороший, старый деревянный забор."
 	icon_state = "zabor_horizontal1"
 	density = 1
 	opacity = 0
@@ -76,47 +72,44 @@
 
 obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, height=0)
 	if(height==0) return 1
-	if(istype(mover) && mover.checkpass(PASSGRILLE))
-		return 1
+
 	else
 		if(istype(mover, /obj/item/projectile) && density)
 			return prob(0)
 		else
 			return !density
 
-/turf/stalker
+/turf/simulated/floor/stalker
 	name = "stalker turf"
 	icon = 'icons/stalker/grass.dmi'
 
-/turf/stalker/floor
+/turf/simulated/floor/stalker/floor
 	name = "Grass"
 	icon = 'icons/stalker/grass.dmi'
 	icon_state = "grass1"
 	layer = TURF_LAYER
-	plane = GAME_PLANE
-	overlay_priority = 0
 
-/turf/stalker/floor/digable
+/turf/simulated/floor/stalker/floor/digable
 
 
-/turf/stalker/floor/digable/grass
+/turf/simulated/floor/stalker/floor/digable/grass
 	icon = 'icons/stalker/zemlya.dmi'
 	icon_state = "grass1"
 
-/turf/stalker/floor/digable/grass/dump
+/turf/simulated/floor/stalker/floor/digable/grass/dump
 	icon = 'icons/stalker/zemlya.dmi'
 	icon_state = "dump_grass1"
 /*
-/turf/stalker/floor/digable/grass/dump/New()
+/turf/simulated/floor/stalker/floor/digable/grass/dump/New()
 	icon_state = "dump_grass[rand(1, 3)]"
 */
-/turf/stalker/floor/digable/gryaz_rocky
+/turf/simulated/floor/stalker/floor/digable/gryaz_rocky
 	icon_state = "gryaz_rocky1"
 
-/turf/stalker/floor/digable/gryaz_rocky/New()
+/turf/simulated/floor/stalker/floor/digable/gryaz_rocky/New()
 	icon_state = "gryaz_rocky[rand(1, 3)]"
 
-/turf/stalker/floor/sidor
+/turf/simulated/floor/stalker/floor/sidor
 	name = "floor"
 	icon = 'icons/turf/beton.dmi'
 	icon_state = "sidorpol"
@@ -144,16 +137,16 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	icon = 'icons/stalker/some_stuff/wooddoor.dmi'
 	icon_state = "door1"
 
-/turf/stalker/floor/asphalt
+/turf/simulated/floor/stalker/floor/asphalt
 	name = "road"
 	icon = 'icons/stalker/Prishtina/asphalt.dmi'
 	icon_state = "road1"
 	layer = 2
-	overlay_priority = 1
+
 
 var/global/list/AsphaltEdgeCache
 
-/turf/stalker/floor/asphalt/New()
+/turf/simulated/floor/stalker/floor/asphalt/New()
 	icon_state = "road[rand(1, 3)]"
 	if(!AsphaltEdgeCache || !AsphaltEdgeCache.len)
 		AsphaltEdgeCache = list()
@@ -168,22 +161,21 @@ var/global/list/AsphaltEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += AsphaltEdgeCache[2**i]
 	return
 
-/turf/stalker/floor/tropa
+/turf/simulated/floor/stalker/floor/tropa
 	name = "road"
 	icon = 'icons/stalker/tropa.dmi'
 	icon_state = "tropa"
 	layer = 2
-	overlay_priority = 2
+
 
 var/global/list/TropaEdgeCache
 
-/turf/stalker/floor/tropa/New()
+/turf/simulated/floor/stalker/floor/tropa/New()
 	if(!TropaEdgeCache || !TropaEdgeCache.len)
 		TropaEdgeCache = list()
 		TropaEdgeCache.len = 10
@@ -197,22 +189,21 @@ var/global/list/TropaEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += TropaEdgeCache[2**i]
 	return
 
-/turf/stalker/floor/road
+/turf/simulated/floor/stalker/floor/road
 	name = "road"
 	icon = 'icons/stalker/building_road.dmi'
 	icon_state = "road2"
 	layer = 2
-	overlay_priority = 3
+
 
 var/global/list/WhiteRoadCache
 
-/turf/stalker/floor/road/New()
+/turf/simulated/floor/stalker/floor/road/New()
 	switch(rand(1, 100))
 		if(1 to 65)
 			icon_state = "road2"
@@ -224,32 +215,20 @@ var/global/list/WhiteRoadCache
 			icon_state = "road4"
 		if(96 to 100)
 			icon_state = "road5"
-
-	if(!WhiteRoadCache || !WhiteRoadCache.len)
-		WhiteRoadCache = list()
-		WhiteRoadCache.len = 10
-		WhiteRoadCache[NORTH] = image('icons/effects/warning_stripes.dmi', "road_b5", layer = 2.01)
-		WhiteRoadCache[SOUTH] = image('icons/effects/warning_stripes.dmi', "road_b6", layer = 2.01)
-		WhiteRoadCache[EAST] = image('icons/effects/warning_stripes.dmi', "road_b8", layer = 2.01)
-		WhiteRoadCache[WEST] = image('icons/effects/warning_stripes.dmi', "road_b7", layer = 2.01)
-
 	spawn(1)
-		for(var/i = 0, i <= 3, i++)
-			if(!get_step(src, 2**i) || (!istype(get_step(src, 2**i), src.type) && !get_step(src, 2**i).overlay_priority))
-				src.overlays += WhiteRoadCache[2**i]
-
+	for(var/i = 0, i <= 3, i++)
 	return
 
-/turf/stalker/floor/gryaz
+/turf/simulated/floor/stalker/floor/gryaz
 	name = "dirt"
 	icon = 'icons/stalker/zemlya.dmi'
 	icon_state = "gryaz1"
 	layer = 2.01
-	overlay_priority = 4
+
 
 var/global/list/GryazEdgeCache
 
-/turf/stalker/floor/gryaz/New()
+/turf/simulated/floor/stalker/floor/gryaz/New()
 	icon_state = "gryaz[rand(1, 3)]"
 	if(!GryazEdgeCache || !GryazEdgeCache.len)
 		GryazEdgeCache = list()
@@ -264,16 +243,15 @@ var/global/list/GryazEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += GryazEdgeCache[2**i]
 	return
 
-/turf/stalker/floor/gryaz/gryaz2
+/turf/simulated/floor/stalker/floor/gryaz/gryaz2
 	icon_state = "gryaz2"
 
-/turf/stalker/floor/gryaz/gryaz3
+/turf/simulated/floor/stalker/floor/gryaz/gryaz3
 	icon_state = "gryaz3"
 
 /obj/structure/stalker/rails
@@ -285,37 +263,37 @@ var/global/list/GryazEdgeCache
 	density = 0
 	opacity = 0
 
-/turf/stalker/floor/plasteel
+/turf/simulated/floor/stalker/floor/plasteel
 	name = "floor"
 	icon = 'icons/stalker/floor.dmi'
 
-/turf/stalker/floor/plasteel/plita
+/turf/simulated/floor/stalker/floor/plasteel/plita
 	icon_state = "plita1"
 
-/turf/stalker/floor/plasteel/plita/New()
+/turf/simulated/floor/stalker/floor/plasteel/plita/New()
 	icon_state = "plita[rand(1, 4)]"
 
-/turf/stalker/floor/plasteel/plitochka
+/turf/simulated/floor/stalker/floor/plasteel/plitochka
 	icon_state = "plitka1"
 
-/turf/stalker/floor/plasteel/plitochka/New()
+/turf/simulated/floor/stalker/floor/plasteel/plitochka/New()
 	icon_state = "plitka[rand(1, 7)]"
 
-/turf/stalker/floor/plasteel/plitka
+/turf/simulated/floor/stalker/floor/plasteel/plitka
 	icon_state = "plitka_old1"
 
-/turf/stalker/floor/plasteel/plitka/New()
+/turf/simulated/floor/stalker/floor/plasteel/plitka/New()
 	icon_state = "plitka_old[rand(1, 8)]"
 
-/turf/stalker/floor/water
+/turf/simulated/floor/stalker/floor/water
 	name = "water"
 	icon = 'icons/stalker/water.dmi'
 	icon_state = "water"
 	layer = TURF_LAYER
-	overlay_priority = 5
+
 	var/busy = 0
 
-/turf/stalker/floor/water/attack_hand(mob/living/user)
+/turf/simulated/floor/stalker/floor/water/attack_hand(mob/living/user)
 	if(!user || !istype(user))
 		return
 	if(!iscarbon(user))
@@ -346,7 +324,6 @@ var/global/list/GryazEdgeCache
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.lip_style = null //Washes off lipstick
-			H.lip_color = initial(H.lip_color)
 			H.regenerate_icons()
 		user.drowsyness -= rand(2,3) //Washing your face wakes you up if you're falling asleep
 		user.drowsyness = Clamp(user.drowsyness, 0, INFINITY)
@@ -354,42 +331,18 @@ var/global/list/GryazEdgeCache
 		user.clean_blood()
 
 
-/turf/stalker/floor/water/attackby(obj/item/O, mob/user, params)
+/turf/simulated/floor/stalker/floor/water/attackby(obj/item/O, mob/user, params)
 	if(busy)
 		user << "<span class='warning'>Someone's already washing here!</span>"
 		return
 
-	if(istype(O, /obj/item/weapon/reagent_containers))
-		var/obj/item/weapon/reagent_containers/RG = O
-		if(RG.flags & OPENCONTAINER)
-			RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-			user << "<span class='notice'>You fill [RG] from [src].</span>"
-			return
-
-	if(istype(O, /obj/item/weapon/melee/baton))
-		var/obj/item/weapon/melee/baton/B = O
-		if(B.bcell)
-			if(B.bcell.charge > 0 && B.status == 1)
-				flick("baton_active", src)
-				var/stunforce = B.stunforce
-				user.Stun(stunforce)
-				user.Weaken(stunforce)
-				user.stuttering = stunforce
-				B.deductcharge(B.hitcost)
-				user.visible_message("<span class='warning'>[user] shocks themself while attempting to wash the active [B.name]!</span>", \
-									"<span class='userdanger'>You unwisely attempt to wash [B] while it's still on.</span>")
-				playsound(src, "sparks", 50, 1)
-				return
-
-	if(istype(O, /obj/item/weapon/mop))
+	if(istype(O, /obj/item/mop))
 		O.reagents.add_reagent("water", 5)
 		user << "<span class='notice'>You wet [O] in [src].</span>"
 		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 
 	var/obj/item/I = O
 	if(!I || !istype(I))
-		return
-	if(I.flags & ABSTRACT) //Abstract items like grabs won't wash. No-drop items will though because it's still technically an item in your hand.
 		return
 
 	user << "<span class='notice'>You start washing [I]...</span>"
@@ -402,11 +355,9 @@ var/global/list/GryazEdgeCache
 	user.visible_message("<span class='notice'>[user] washes [I] using [src].</span>", \
 						"<span class='notice'>You wash [I] using [src].</span>")
 
-/turf/stalker/floor/water/Entered(atom/movable/A)
+/turf/simulated/floor/stalker/floor/water/Entered(atom/movable/A)
 	..()
 	if(istype(A, /mob/living))
-		var/mob/living/L = A
-		L.update_top_overlay()
 		if(istype(A, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = A
 			if(H.shoes)
@@ -415,16 +366,14 @@ var/global/list/GryazEdgeCache
 				H.fire_stacks = 0
 				H.ExtinguishMob()
 
-/turf/stalker/floor/water/Exited(atom/movable/A)
+/turf/simulated/floor/stalker/floor/water/Exited(atom/movable/A)
 	..()
 	if(istype(A, /mob/living))
-		var/mob/living/L = A
-		L.update_top_overlay()
 		flick("water_splash_movement", src)
 
 var/global/list/WaterEdgeCache
 
-/turf/stalker/floor/water/New()
+/turf/simulated/floor/stalker/floor/water/New()
 	if(!WaterEdgeCache || !WaterEdgeCache.len)
 		WaterEdgeCache = list()
 		WaterEdgeCache.len = 10
@@ -438,149 +387,148 @@ var/global/list/WaterEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += WaterEdgeCache[2**i]
 	return
 
-/turf/stalker/floor/wood
+/turf/simulated/floor/stalker/floor/wood
 	icon = 'icons/stalker/floor.dmi'
 	name = "floor"
 
-/turf/stalker/floor/wood/brown
+/turf/simulated/floor/stalker/floor/wood/brown
 	icon_state = "wooden_floor"
 
-/turf/stalker/floor/wood/grey
+/turf/simulated/floor/stalker/floor/wood/grey
 	icon_state = "wooden_floor2"
 
-/turf/stalker/floor/wood/black
+/turf/simulated/floor/stalker/floor/wood/black
 	icon_state = "wooden_floor3"
 
-/turf/stalker/floor/wood/oldgor
+/turf/simulated/floor/stalker/floor/wood/oldgor
 	icon_state = "wood1"
 
-/turf/stalker/floor/wood/oldvert
+/turf/simulated/floor/stalker/floor/wood/oldvert
 	icon_state = "woodd1"
 
-/turf/stalker/floor/metro
+/turf/simulated/floor/stalker/floor/metro
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "bf25"
 	name = "floor"
 
-/turf/stalker/floor/metro/v2
+/turf/simulated/floor/stalker/floor/metro/v2
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "F74"
 
-/turf/stalker/floor/metro/v3
+/turf/simulated/floor/stalker/floor/metro/v3
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "23323"
 
-/turf/stalker/floor/metro/v4
+/turf/simulated/floor/stalker/floor/metro/v4
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "snf23"
 
-/turf/stalker/floor/metro/v5
+/turf/simulated/floor/stalker/floor/metro/v5
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "nf24"
 
-/turf/stalker/floor/metro/v6
+/turf/simulated/floor/stalker/floor/metro/v6
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "1"
 
-/turf/stalker/floor/metro/v7
+/turf/simulated/floor/stalker/floor/metro/v7
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "surgery"
 
-/turf/stalker/floor/metro/v8
+/turf/simulated/floor/stalker/floor/metro/v8
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "npolar2"
 
-/turf/stalker/floor/metro/v9
+/turf/simulated/floor/stalker/floor/metro/v9
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "wtf"
 
-/turf/stalker/floor/metro/v10
+/turf/simulated/floor/stalker/floor/metro/v10
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "npolar"
 
-/turf/stalker/floor/metro/v11
+/turf/simulated/floor/stalker/floor/metro/v11
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "nfloorz"
 
-/turf/stalker/floor/metro/open
+/turf/simulated/floor/stalker/floor/metro/open
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "openspace"
 
-/turf/stalker/floor/metro/v12
+/turf/simulated/floor/stalker/floor/metro/v12
 	icon = 'icons/stalker/metro-2/Rails.dmi'
 	icon_state = "rail_straight"
 
-/turf/stalker/floor/metro/v13
+/turf/simulated/floor/stalker/floor/metro/v13
 	icon = 'icons/stalker/metro-2/railroads.dmi'
 	icon_state = "railroad"
 
-/turf/stalker/floor/metro/v18
+/turf/simulated/floor/stalker/floor/metro/v18
 	icon = 'icons/stalker/lohweb/floors.dmi'
 	icon_state = "bfloorz"
 
-/turf/stalker/floor/metro/v19
+/turf/simulated/floor/stalker/floor/metro/v19
 	icon = 'icons/stalker/lohweb/floors.dmi'
 	icon_state = "polar"
 
-/turf/stalker/floor/metro/rails/v14
+/turf/simulated/floor/stalker/floor/metro/rails/v14
 	icon = 'icons/stalker/metro-2/railroads.dmi'
 	icon_state = "railroad_left1"
 
-/turf/stalker/floor/metro/rails/v14/New()
+/turf/simulated/floor/stalker/floor/metro/rails/v14/New()
 	icon_state = "railroad_left[rand(1, 4)]"
 
-/turf/stalker/floor/metro/rails/v15
+/turf/simulated/floor/stalker/floor/metro/rails/v15
 	icon = 'icons/stalker/metro-2/railroads.dmi'
 	icon_state = "railroad_right1"
 
-/turf/stalker/floor/metro/rails/v15/New()
+/turf/simulated/floor/stalker/floor/metro/rails/v15/New()
 	icon_state = "railroad_right[rand(1, 4)]"
 
-/turf/stalker/floor/metro/rails/v16
+/turf/simulated/floor/stalker/floor/metro/rails/v16
 	icon = 'icons/stalker/metro-2/railroads.dmi'
 	icon_state = "railroad_south1"
 
-/turf/stalker/floor/metro/rails/v16/New()
+/turf/simulated/floor/stalker/floor/metro/rails/v16/New()
 	icon_state = "railroad_south[rand(1, 4)]"
 
-/turf/stalker/floor/metro/rails/v17
+/turf/simulated/floor/stalker/floor/metro/rails/v17
 	icon = 'icons/stalker/metro-2/railroads.dmi'
 	icon_state = "railroad_north1"
 
-/turf/stalker/floor/metro/rails/v17/New()
+/turf/simulated/floor/stalker/floor/metro/rails/v17/New()
 	icon_state = "railroad_north[rand(1, 4)]"
 
-/turf/stalker/floor/agroprom/beton
+/turf/simulated/floor/stalker/floor/agroprom/beton
 	name = "floor"
 	icon = 'icons/stalker/pol_agroprom.dmi'
 	icon_state = "beton1"
 
-/turf/stalker/floor/agroprom/beton/New()
+/turf/simulated/floor/stalker/floor/agroprom/beton/New()
 	icon_state = "beton[rand(1, 4)]"
 
-/turf/stalker/floor/agroprom/gryaz
+/turf/simulated/floor/stalker/floor/agroprom/gryaz
 	name = "dirt"
 	icon = 'icons/stalker/pol_agroprom.dmi'
 	icon_state = "gryaz1"
 
-/turf/stalker/floor/agroprom/gryaz/New()
+/turf/simulated/floor/stalker/floor/agroprom/gryaz/New()
 	icon_state = "gryaz[rand(1, 11)]"
 
-/turf/stalker/floor/lattice
+/turf/simulated/floor/stalker/floor/lattice
 	name = "lattice"
 	icon = 'icons/stalker/floor.dmi'
 	icon_state = "lattice_new"
-	overlay_priority = 100
+
 /*
-/turf/stalker/floor/lattice/New()
+/turf/simulated/floor/stalker/floor/lattice/New()
 	icon_state = "lattice[rand(1, 4)]"
 */
 
-/turf/stalker/floor/plasteel/plita/orange
+/turf/simulated/floor/stalker/floor/plasteel/plita/orange
 	icon_state = "plita_orange"

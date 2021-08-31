@@ -42,6 +42,7 @@
 
 /obj/item/natural_weapon/claws/strong
 	force = 25
+	sharp = TRUE
 
 /obj/item/natural_weapon/claws/weak
 	force = 5

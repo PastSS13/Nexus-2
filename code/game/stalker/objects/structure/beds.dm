@@ -3,46 +3,46 @@
 
 /obj/structure/bed/stalker/metal
 	name = "bed"
-	desc = "Обычная металлическая кровать без матраса, не слишком удобная для сна."
+	desc = "РћР±С‹С‡РЅР°СЏ РјРµС‚Р°Р»Р»РёС‡РµСЃРєР°СЏ РєСЂРѕРІР°С‚СЊ Р±РµР· РјР°С‚СЂР°СЃР°, РЅРµ СЃР»РёС€РєРѕРј СѓРґРѕР±РЅР°СЏ РґР»СЏ СЃРЅР°."
 	 // eng_desc = "Metal frame of a bed. Not very convinient."
 	icon_state = "krovat_e"
 
 /obj/structure/bed/stalker/metal/matras
-	desc = "Обычная металлическая кровать с матрасом, комфорт во время сна обеспечен."
+	desc = "РћР±С‹С‡РЅР°СЏ РјРµС‚Р°Р»Р»РёС‡РµСЃРєР°СЏ РєСЂРѕРІР°С‚СЊ СЃ РјР°С‚СЂР°СЃРѕРј, РєРѕРјС„РѕСЂС‚ РІРѕ РІСЂРµРјСЏ СЃРЅР° РѕР±РµСЃРїРµС‡РµРЅ."
 	 // eng_desc = "Metal frame of a bed with a mattress upon it."
 	icon_state = "krovat"
 
 /obj/structure/bed/stalker/matras
 	name = "matras"
-	desc = "Обычный пружинный матрас средней комфортабельности."
+	desc = "РћР±С‹С‡РЅС‹Р№ РїСЂСѓР¶РёРЅРЅС‹Р№ РјР°С‚СЂР°СЃ СЃСЂРµРґРЅРµР№ РєРѕРјС„РѕСЂС‚Р°Р±РµР»СЊРЅРѕСЃС‚Рё."
 	 // eng_desc = "Simple mattress."
 	icon_state = "matras"
 
 /obj/structure/bed/stalker/metro/v1
 	icon = 'icons/stalker/lohweb/objects.dmi'
 	name = "bed"
-	desc = "Обычная металлическая кровать без матраса, не слишком удобная для сна."
+	desc = "РћР±С‹С‡РЅР°СЏ РјРµС‚Р°Р»Р»РёС‡РµСЃРєР°СЏ РєСЂРѕРІР°С‚СЊ Р±РµР· РјР°С‚СЂР°СЃР°, РЅРµ СЃР»РёС€РєРѕРј СѓРґРѕР±РЅР°СЏ РґР»СЏ СЃРЅР°."
 	 // eng_desc = "Metal frame of a bed. Not very convinient."
 	icon_state = "pigbed2"
 
 /obj/structure/bed/stalker/metro/v2
 	icon = 'icons/stalker/lohweb/objects.dmi'
 	name = "bed"
-	desc = "Обычная металлическая кровать с матрасом, комфорт во время сна обеспечен."
+	desc = "РћР±С‹С‡РЅР°СЏ РјРµС‚Р°Р»Р»РёС‡РµСЃРєР°СЏ РєСЂРѕРІР°С‚СЊ СЃ РјР°С‚СЂР°СЃРѕРј, РєРѕРјС„РѕСЂС‚ РІРѕ РІСЂРµРјСЏ СЃРЅР° РѕР±РµСЃРїРµС‡РµРЅ."
 	 // eng_desc = "Metal frame of a bed with a mattress upon it."
 	icon_state = "heirsbed"
 
 /obj/structure/bed/stalker/metro/v3
 	icon = 'icons/stalker/lohweb/objects.dmi'
 	name = "bed"
-	desc = "Обычная металлическая кровать с матрасом, комфорт во время сна обеспечен."
+	desc = "РћР±С‹С‡РЅР°СЏ РјРµС‚Р°Р»Р»РёС‡РµСЃРєР°СЏ РєСЂРѕРІР°С‚СЊ СЃ РјР°С‚СЂР°СЃРѕРј, РєРѕРјС„РѕСЂС‚ РІРѕ РІСЂРµРјСЏ СЃРЅР° РѕР±РµСЃРїРµС‡РµРЅ."
 	 // eng_desc = "Metal frame of a bed with a mattress upon it."
 	icon_state = "xbed"
 
 
 /obj/structure/stalker/matras
 	name = "matras"
-	desc = "Свернутый матрас. С трудом, но иногда может заменять подушку."
+	desc = "РЎРІРµСЂРЅСѓС‚С‹Р№ РјР°С‚СЂР°СЃ. РЎ С‚СЂСѓРґРѕРј, РЅРѕ РёРЅРѕРіРґР° РјРѕР¶РµС‚ Р·Р°РјРµРЅСЏС‚СЊ РїРѕРґСѓС€РєСѓ."
 	 // eng_desc = "Simple rolled mattress."
 	icon_state = "s_matras"
 	density = 0
@@ -50,7 +50,7 @@
 
 /obj/structure/stalker/brokenbed
 	name = "broken bed"
-	desc = "Сломанная металлическая кровать. На ней уже не поспишь."
+	desc = "РЎР»РѕРјР°РЅРЅР°СЏ РјРµС‚Р°Р»Р»РёС‡РµСЃРєР°СЏ РєСЂРѕРІР°С‚СЊ. РќР° РЅРµР№ СѓР¶Рµ РЅРµ РїРѕСЃРїРёС€СЊ."
 	 // eng_desc = "Metal broken bed."
 	icon_state = "krovat_s"
 
@@ -59,7 +59,7 @@
 
 /obj/structure/bed/chair/stalker/divan
 	name = "sofa"
-	desc = "Старый изношенный диван. Местами запачканный, местами дырявый - но сидеть на нём все же можно."
+	desc = "РЎС‚Р°СЂС‹Р№ РёР·РЅРѕС€РµРЅРЅС‹Р№ РґРёРІР°РЅ. РњРµСЃС‚Р°РјРё Р·Р°РїР°С‡РєР°РЅРЅС‹Р№, РјРµСЃС‚Р°РјРё РґС‹СЂСЏРІС‹Р№ - РЅРѕ СЃРёРґРµС‚СЊ РЅР° РЅС‘Рј РІСЃРµ Р¶Рµ РјРѕР¶РЅРѕ."
 	 // eng_desc = "Old sofa."
 	icon_state = "divan"
 

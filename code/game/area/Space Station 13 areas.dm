@@ -55,11 +55,29 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 //	var/list/lights				// list of all lights on this area
 	var/list/all_doors = null		//Added by Strumpetplaya - Alarm Change - Contains a list of doors adjacent to this area
 	var/air_doors_activated = 0
-	var/list/ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
+	var/list/ambience = list('sound/stalker/ambience/amb01.ogg','sound/stalker/ambience/amb02.ogg',
+									'sound/stalker/ambience/amb03.ogg','sound/stalker/ambience/amb04.ogg',
+									'sound/stalker/ambience/amb05.ogg','sound/stalker/ambience/amb06.ogg',
+									'sound/stalker/ambience/amb07.ogg','sound/stalker/ambience/amb08.ogg',
+									'sound/stalker/ambience/amb09.ogg','sound/stalker/ambience/amb10.ogg',
+									'sound/stalker/ambience/amb11.ogg','sound/stalker/ambience/amb12.ogg',
+									'sound/stalker/ambience/amb13.ogg','sound/stalker/ambience/amb15.ogg',
+									'sound/stalker/ambience/amb16.ogg','sound/stalker/ambience/amb17.ogg',
+									'sound/stalker/ambience/amb20.ogg','sound/stalker/ambience/amb21.ogg',
+									'sound/stalker/ambience/amb22.ogg','sound/stalker/ambience/amb23.ogg',
+									'sound/stalker/ambience/amb24.ogg','sound/stalker/ambience/amb25.ogg',
+									'sound/stalker/ambience/amb26.ogg','sound/stalker/ambience/amb27.ogg',
+									'sound/stalker/ambience/amb28.ogg','sound/stalker/ambience/amb29.ogg',
+									'sound/stalker/ambience/amb30.ogg','sound/stalker/ambience/amb31.ogg',
+									'sound/stalker/ambience/amb32.ogg','sound/stalker/ambience/amb33.ogg',
+									'sound/stalker/ambience/amb34.ogg','sound/stalker/ambience/amb35.ogg',
+									'sound/stalker/ambience/amb36.ogg','sound/stalker/ambience/amb37.ogg',
+									'sound/stalker/ambience/amb38.ogg')
+
 	var/list/forced_ambience = null
 	var/sound_env = STANDARD_STATION
 	var/turf/base_turf //The base turf type of the area, which can be used to override the z-level's base turf
-	var/planetary_surface = FALSE // true if the area belongs to a planet.
+	var/planetary_surface = TRUE // true if the area belongs to a planet.
 
 /*-----------------------------------------------------------------------------*/
 

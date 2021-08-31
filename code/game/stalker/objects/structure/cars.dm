@@ -3,7 +3,7 @@
 
 /obj/structure/stalker/car/gryzovik
 	name = "Gruzovik"
-	desc = "Старый советский груховик со спущенными шинами."
+	desc = "РЎС‚Р°СЂС‹Р№ СЃРѕРІРµС‚СЃРєРёР№ РіСЂСѓС…РѕРІРёРє СЃРѕ СЃРїСѓС‰РµРЅРЅС‹РјРё С€РёРЅР°РјРё."
 	icon = 'icons/stalker/decor128.dmi'
 	 // eng_desc = "Old soviet truck."
 
@@ -25,7 +25,7 @@
 
 /obj/structure/stalker/car/gryzovik2
 	name = "Gruzovik"
-	desc = "Старый советский груховик со спущенными шинами."
+	desc = "РЎС‚Р°СЂС‹Р№ СЃРѕРІРµС‚СЃРєРёР№ РіСЂСѓС…РѕРІРёРє СЃРѕ СЃРїСѓС‰РµРЅРЅС‹РјРё С€РёРЅР°РјРё."
 
 /obj/structure/stalker/car/gryzovik2/south
 	icon = 'icons/stalker/cars/gruzovik2_south.dmi'
@@ -41,7 +41,7 @@
 /obj/structure/stalker/car/uaz
 	name = "UAZ"
 	icon = 'icons/stalker/cars/uaz-469_south.dmi'
-	desc = "Ржавый, но все еще работает. Только бензин закончился."
+	desc = "Р Р¶Р°РІС‹Р№, РЅРѕ РІСЃРµ РµС‰Рµ СЂР°Р±РѕС‚Р°РµС‚. РўРѕР»СЊРєРѕ Р±РµРЅР·РёРЅ Р·Р°РєРѕРЅС‡РёР»СЃСЏ."
 	 // eng_desc = "Old UAZ."
 
 /obj/structure/stalker/car/mi24
@@ -50,7 +50,7 @@
 
 /obj/structure/stalker/car/gryzovik_army
 	name = "Gruzovik"
-	desc = "Старый советский армейские груховик со спущенными шинами."
+	desc = "РЎС‚Р°СЂС‹Р№ СЃРѕРІРµС‚СЃРєРёР№ Р°СЂРјРµР№СЃРєРёРµ РіСЂСѓС…РѕРІРёРє СЃРѕ СЃРїСѓС‰РµРЅРЅС‹РјРё С€РёРЅР°РјРё."
 	 // eng_desc = "Old soviet truck."
 
 /obj/structure/stalker/car/gryzovik_army/south
@@ -63,14 +63,14 @@
 
 /obj/structure/stalker/car/gryzovik_dead
 	name = "broken car"
-	desc = "Старый, сильно потрёпанный грузовик."
+	desc = "РЎС‚Р°СЂС‹Р№, СЃРёР»СЊРЅРѕ РїРѕС‚СЂС‘РїР°РЅРЅС‹Р№ РіСЂСѓР·РѕРІРёРє."
 	icon = 'icons/stalker/cars/gruzovik_dead/north.dmi'
 	icon_state = "1"
 	 // eng_desc = "Broken car."
 
 /obj/structure/stalker/car/btr
 	name = "broken BTR"
-	desc = "Поржавевший бронетранспортёр. Когда-то таким палили по пендосам."
+	desc = "РџРѕСЂР¶Р°РІРµРІС€РёР№ Р±СЂРѕРЅРµС‚СЂР°РЅСЃРїРѕСЂС‚С‘СЂ. РљРѕРіРґР°-С‚Рѕ С‚Р°РєРёРј РїР°Р»РёР»Рё РїРѕ РїРµРЅРґРѕСЃР°Рј."
 	 // eng_desc = "Broken BTR."
 	icon = 'icons/stalker/btr.dmi'
 	icon_state = "1"

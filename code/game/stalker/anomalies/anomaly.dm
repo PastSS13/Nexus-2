@@ -9,6 +9,7 @@
 /var/list/obj/anomaly/anomalies = list()
 /var/list/obj/item/weapon/spawned_artifacts = list()
 
+
 /obj/anomaly
 	name = "Anomaly"
 	var/damage_amount = 0 				//Сколько дамажит
@@ -33,7 +34,6 @@
 	icon = 'icons/stalker/anomalies.dmi'
 	unacidable = 1
 	anchored = 1
-	pass_flags = PASSTABLE | PASSGRILLE
 
 /obj/anomaly/New()
 	..()
@@ -41,44 +41,6 @@
 	icon_state = inactive_icon_state
 	invisibility = inactive_invisibility
 	set_light(idle_luminosity, l_color = anomaly_color)
-	SpawnArtifact()
-
-/obj/anomaly/proc/SpawnArtifact()
-	for(var/i = 1, i <= loot_count, i++)
-		if(!loot)
-			return
-
-		var/lootspawn = pickweight(loot)
-
-		if(!lootspawn || lootspawn == /obj/nothing)
-			return
-
-		//var/obj/item/weapon/artifact/lootspawn_art = lootspawn
-		var/turf/T = get_turf(src)
-		var/obj/item/weapon/artifact/O = new lootspawn(T)
-		O.invisibility = 100
-
-		switch(z)
-			if(4)
-				if(O.level_s > 4)
-					PlaceInPool(O)
-					SpawnArtifact()
-					return
-
-			if(3)
-				if(O.level_s > 2)
-					PlaceInPool(O)
-					SpawnArtifact()
-					return
-
-			if(2)
-				if(O.level_s > 3)
-					PlaceInPool(O)
-					SpawnArtifact()
-					return
-
-		RandomMove(O)
-		spawned_artifacts += O
 
 /obj/anomaly/proc/RandomMove(spawned)
 	if(!spawned || !istype(spawned, /obj))
@@ -98,10 +60,6 @@
 	..()
 	if(lasttime + (cooldown * 10) > world.time)
 		return
-
-	if(istype(A,/obj/item/projectile) || istype(A,/obj/item/weapon/artifact))
-		return
-
 	if(istype(A,/obj/item))
 
 		ApplyEffects()
@@ -197,15 +155,10 @@
 
 	sleep(5)
 
-	var/turf/T = get_turf(I)
-	var/obj/effect/decal/cleanable/molten_item/Q = PoolOrNew(/obj/effect/decal/cleanable/molten_item ,T)
+	var/obj/effect/decal/cleanable/molten_item/Q = (/obj/effect/decal/cleanable/molten_item )
 	Q.pixel_x = rand(-16,16)
 	Q.pixel_y = rand(-16,16)
 	Q.desc = "Looks like this was \an [I] some time ago."
-
-	if(istype(I,/obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = I
-		S.do_quick_empty()
 
 	qdel(I)
 
@@ -217,11 +170,11 @@
 
 	switch(src.damage_type)
 		if(DMG_TYPE_ENERGY)
-			L.apply_damage(src.damage_amount, BURN, null, L.getarmor(null, "energy"))
+			L.apply_damage(src.damage_amount, BURN = "energy")
 		if(DMG_TYPE_BIO)
-			L.apply_damage(src.damage_amount, BURN, null, L.getarmor(null, "bio"))
+			L.apply_damage(src.damage_amount, BURN = "bio")
 		if(DMG_TYPE_LASTER)
-			L.apply_damage(src.damage_amount, BURN, null, L.getarmor(null, "laser"))
+			L.apply_damage(src.damage_amount, BURN = "laser")
 		if(DMG_TYPE_RADIATION)
 			L.rad_act(src.damage_amount)
 		if(DMG_TYPE_GIB)
@@ -229,7 +182,7 @@
 				L.gib()
 				trapped.Remove(L)
 			else
-				L.apply_damage(src.damage_amount, BRUTE, null, L.getarmor(null, "meele"))
+				L.apply_damage(src.damage_amount, BRUTE = "meele")
 		if(DMG_TYPE_IGNITION)
 			if(istype(L, /mob/living/simple_animal/hostile))
 				L.apply_damage(40, BURN, null, 0)
@@ -257,7 +210,7 @@
 	name = "anomaly"
 	damage_amount = 40
 	cooldown = 2
-	sound = 'sound/stalker/anomalies/electra_blast1.ogg'
+	sound = "sound/stalker/anomalies/electra_blast1.ogg"
 	idle_luminosity = 1
 	activated_luminosity = 3
 	anomaly_color = "#7ac8e2"
@@ -266,12 +219,7 @@
 	active_icon_state = "electra1"
 	active_invisibility = 0
 	inactive_invisibility = 0
-	loot = list(/obj/nothing = 90,
-				/obj/item/weapon/artifact/flash = 5,
-				/obj/item/weapon/artifact/moonlight = 3.5,
-				/obj/item/weapon/artifact/battery = 1.5,
-				/obj/item/weapon/artifact/pustishka = 0.5
-				)
+
 
 /obj/anomaly/electro/New()
 	..()
@@ -293,12 +241,6 @@
 	damage_type = DMG_TYPE_GIB
 	active_invisibility = 0
 	inactive_invisibility = 101
-	loot = list(/obj/nothing = 80,
-				/obj/item/weapon/artifact/meduza = 12,
-				/obj/item/weapon/artifact/stoneflower = 5,
-				/obj/item/weapon/artifact/nightstar = 2,
-				/obj/item/weapon/artifact/soul = 1
-				)
 
 /obj/anomaly/karusel/New()
 	..()
@@ -308,7 +250,7 @@
 	..()
 	SSobj.processing.Remove(src)
 
-/obj/anomaly/karusel/process()
+/proc/obj/anomaly/karusel/process()
 	for(var/atom/movable/A in range(2, src))
 		if(!A.anchored)
 			step_towards(A,src)
@@ -328,11 +270,6 @@
 	damage_type = DMG_TYPE_GIB
 	active_invisibility = 0
 	inactive_invisibility = 101
-	loot = list(/obj/nothing = 80,
-				/obj/item/weapon/artifact/meduza = 12,
-				/obj/item/weapon/artifact/stoneflower = 6,
-				/obj/item/weapon/artifact/nightstar = 2
-				)
 
 /obj/anomaly/jarka
 	name = "anomaly"
@@ -348,12 +285,6 @@
 	active_icon_state = "jarka1"
 	active_invisibility = 0
 	inactive_invisibility = 0
-	loot = list(/obj/nothing = 90,
-				/obj/item/weapon/artifact/droplet = 5,
-				/obj/item/weapon/artifact/fireball = 3,
-				/obj/item/weapon/artifact/crystal = 1.5,
-				/obj/item/weapon/artifact/maminibusi = 0.5
-				)
 
 /obj/anomaly/jarka/New()
 	..()
@@ -383,15 +314,12 @@
 
 	sleep(5)
 
-	var/turf/T = get_turf(I)
-	var/obj/effect/decal/cleanable/molten_item/Q = PoolOrNew(/obj/effect/decal/cleanable/molten_item ,T)
+
+	var/obj/effect/decal/cleanable/molten_item/Q = (/obj/effect/decal/cleanable/molten_item )
 	Q.pixel_x = rand(-16,16)
 	Q.pixel_y = rand(-16,16)
 	Q.desc = "Looks like this was \an [I] some time ago."
 
-	if(istype(I,/obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = I
-		S.do_quick_empty()
 
 	qdel(I)
 
@@ -399,12 +327,6 @@
 	name = "comet"
 	inactive_icon_state = "jarka1"
 	active_icon_state = "jarka1"
-	loot = list(/obj/item/weapon/artifact/droplet = 45,
-				/obj/item/weapon/artifact/fireball = 40,
-				/obj/item/weapon/artifact/crystal = 10,
-				/obj/item/weapon/artifact/maminibusi = 5
-				)
-	loot_count = 2
 	var/stage = 0
 	var/radius = 3
 	var/list/turf/traectory = null
@@ -412,18 +334,11 @@
 /obj/anomaly/jarka/comet/New()
 	..()
 	SSobj.processing.Add(src)
-	traectory = circleturfs(src, 4)
+
 
 /obj/anomaly/jarka/comet/Destroy()
 	..()
 	SSobj.processing.Remove(src)
-
-/obj/anomaly/jarka/comet/process()
-	stage++
-	world << stage
-	forceMove(traectory[stage])
-	if(stage == traectory.len)
-		stage = 0
 
 /obj/anomaly/holodec
 	name = "anomaly"
@@ -440,12 +355,6 @@
 	active_icon_state = "holodec" //needs activation icon
 	active_invisibility = 0
 	inactive_invisibility = 0
-	loot = list(/obj/nothing = 80,
-				/obj/item/weapon/artifact/stone_blood = 10,
-				/obj/item/weapon/artifact/bubble = 5.5,
-				/obj/item/weapon/artifact/mica = 3,
-				/obj/item/weapon/artifact/firefly = 1.5
-				)
 
 /obj/anomaly/holodec/New()
 	..()
@@ -476,31 +385,14 @@
 
 	sleep(5)
 
-	var/turf/T = get_turf(I)
-	var/obj/effect/decal/cleanable/molten_item/Q = PoolOrNew(/obj/effect/decal/cleanable/molten_item ,T)
+	var/obj/effect/decal/cleanable/molten_item/Q = (/obj/effect/decal/cleanable/molten_item )
 	Q.pixel_x = rand(-16,16)
 	Q.pixel_y = rand(-16,16)
 	Q.desc = "Looks like this was \an [I] some time ago."
 
-	if(istype(I,/obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = I
-		S.do_quick_empty()
-
 	qdel(I)
 
-/obj/anomaly/holodec/process()
-	var/new_dir = rand(1, 10)
-
-	if(!istype(get_step(src, new_dir), /turf/stalker/floor))
-		return
-
-	if(locate(/obj/anomaly/holodec) in get_step(src, new_dir))
-		return
-
-	if(locate(/obj/structure) in get_step(src, new_dir))
-		return
-
-	var/obj/anomaly/holodec/splash/son = PoolOrNew(/obj/anomaly/holodec/splash, get_step(src, new_dir))
+	var/obj/anomaly/holodec/splash/son = (/obj/anomaly/holodec/splash)
 	src.do_attack_animation(son, 0)
 
 /obj/anomaly/holodec/splash
@@ -516,7 +408,6 @@
 	icon_state = "holodec_splash"
 	active_invisibility = 0
 	inactive_invisibility = 0
-	loot = list()
 	var/spawn_time = 0
 
 /obj/anomaly/holodec/splash/ApplyEffects()
@@ -556,15 +447,10 @@
 
 	sleep(5)
 
-	var/turf/T = get_turf(I)
-	var/obj/effect/decal/cleanable/molten_item/Q = PoolOrNew(/obj/effect/decal/cleanable/molten_item ,T)
+	var/obj/effect/decal/cleanable/molten_item/Q = (/obj/effect/decal/cleanable/molten_item )
 	Q.pixel_x = rand(-16,16)
 	Q.pixel_y = rand(-16,16)
 	Q.desc = "Looks like this was \an [I] some time ago."
-
-	if(istype(I,/obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = I
-		S.do_quick_empty()
 
 	qdel(I)
 
@@ -596,21 +482,21 @@
 	icon = 'icons/stalker/anomalies.dmi'
 	unacidable = 1
 	anchored = 1
-	pass_flags = PASSTABLE | PASSGRILLE
+	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 
 /obj/rad/rad_low
 	damage_amount = 10
-	sound = 'sound/stalker/pda/geiger_1.ogg'
+	sound = "sound/stalker/pda/geiger_1.ogg"
 	icon_state = "rad_low"
 
 /obj/rad/rad_medium
 	damage_amount = 25
-	sound = 'sound/stalker/pda/geiger_4.ogg'
+	sound = "sound/stalker/pda/geiger_4.ogg"
 	icon_state = "rad_medium"
 
 /obj/rad/rad_high
 	damage_amount = 75
-	sound = 'sound/stalker/pda/geiger_6.ogg'
+	sound = "sound/stalker/pda/geiger_6.ogg"
 	icon_state = "rad_high"
 
 /obj/rad/New()
@@ -631,9 +517,6 @@
 		if(lasttime + cooldown < world.time)
 			H.rad_act(src.damage_amount)
 
-		if(istype(H.wear_id,/obj/item/device/stalker_pda))
-			H << sound(src.sound, repeat = 0, wait = 0, volume = 50, channel = 3)
-
 		//if(src.trapped.len >= 1)
 		//	SSobj.processing |= src
 
@@ -644,7 +527,7 @@
 		src.trapped -= H
 		//SSobj.processing.Remove(src)
 
-/obj/rad/process()
+/obj/rad/Uncrossed ()
 	if(src.trapped.len < 1)
 		//SSobj.processing.Remove(src)
 		return
@@ -666,7 +549,5 @@
 
 		H.rad_act(src.damage_amount)
 
-		if(istype(H.wear_id,/obj/item/device/stalker_pda))
-			H << sound(src.sound, repeat = 0, wait = 0, volume = 50, channel = 3)
 
 	src.lasttime = world.time

@@ -29,14 +29,14 @@
 
 /obj/structure/barricade/stalker/wood
 	name = "wooden barricade"
-	desc = "Забарикадированный досками проход."
+	desc = "Р—Р°Р±Р°СЂРёРєР°РґРёСЂРѕРІР°РЅРЅС‹Р№ РґРѕСЃРєР°РјРё РїСЂРѕС…РѕРґ."
 	 // eng_desc = "Planks."
 	icon_state = "zabitiy_proxod"
 	debriss_type = /obj/structure/stalker/doski
 
 /obj/structure/barricade/stalker/box
 	name = "wooden box"
-	desc = "Заколоченный деревянный ящик. Кто знает, что может быть внутри."
+	desc = "Р—Р°РєРѕР»РѕС‡РµРЅРЅС‹Р№ РґРµСЂРµРІСЏРЅРЅС‹Р№ СЏС‰РёРє. РљС‚Рѕ Р·РЅР°РµС‚, С‡С‚Рѕ РјРѕР¶РµС‚ Р±С‹С‚СЊ РІРЅСѓС‚СЂРё."
 	icon = 'icons/stalker/decor.dmi'
 	icon_state = "yashik"
 	debriss_type = /obj/structure/stalker/doski/doski2
@@ -53,7 +53,7 @@
 
 /obj/structure/barricade/stalker/barbed_wire
 	name = "wire"
-	desc = "атрибутика войны."
+	desc = "Р°С‚СЂРёР±СѓС‚РёРєР° РІРѕР№РЅС‹."
 	icon = 'icons/stalker/some_stuff/barbedwire.dmi'
 	icon_state = "barbedwire"
 
@@ -61,7 +61,7 @@
 /obj/structure/stalker/blocks
 	name = "blocks"
 	icon = 'icons/stalker/decor2.dmi'
-	desc = "Обычный бетонный блок."
+	desc = "РћР±С‹С‡РЅС‹Р№ Р±РµС‚РѕРЅРЅС‹Р№ Р±Р»РѕРє."
 	 // eng_desc = "Blocks."
 	var/health = 300
 	var/maxhealth = 300
@@ -149,7 +149,7 @@
 
 /obj/structure/stalker/blocks/vanish/pipe
 	name = "Pipe"
-	desc = "Громадная железобетонная труба."
+	desc = "Р“СЂРѕРјР°РґРЅР°СЏ Р¶РµР»РµР·РѕР±РµС‚РѕРЅРЅР°СЏ С‚СЂСѓР±Р°."
 	 // eng_desc = "Big pipe."
 	icon = 'icons/stalker/decor2.dmi'
 	icon_state = "truba1"
@@ -171,7 +171,7 @@
 
 /obj/structure/stalker/blocks/vanish/sandbags
 	name = "sandbags"
-	desc = "Обычная насыпь из мешков с песком"
+	desc = "РћР±С‹С‡РЅР°СЏ РЅР°СЃС‹РїСЊ РёР· РјРµС€РєРѕРІ СЃ РїРµСЃРєРѕРј"
 	 // eng_desc = "Sangbags."
 	icon = 'icons/stalker/structure/sandbags.dmi'
 	icon_state = "sandbag"

@@ -5,6 +5,7 @@
 	var/sound/ambient_psy			= null		//ѕси-звук
 	var/sound/ambient_campfire		= null		//«вук от костра - campfire.dm
 	var/sound/music
+	var/tox = null
 
 /sound
 	var/last_time = 0
@@ -19,10 +20,6 @@
 		return 0
 
 	var/area/A = get_area(src)
-
-	if(/ambient_music && !ambient_music.transition && (!A.ambient_music || (music && music.volume > 0)))
-		ambient_music.Transition(src)
-		ambient_music = null
 
 	if(ambient_background && !ambient_background.transition && !(ambient_background.file in A.ambient_background))//[SSsunlight.current_step]))
 
@@ -51,7 +48,7 @@
 
 		if(A.ambient_environment)
 
-			if(A.ambient_environment_night && (SSsunlight.current_step == STEP_EVENING || SSsunlight.current_step == STEP_NIGHT))
+			if(A.ambient_environment_night)
 				ambient_environment = sound(file = safepick(A.ambient_environment_night))
 			else
 				ambient_environment = sound(file = safepick(A.ambient_environment))
@@ -69,9 +66,8 @@
 
 		if(A.ambient_background)
 
-			if(A.ambient_background[SSsunlight.current_step])
-				ambient_background = sound(file = A.ambient_background[SSsunlight.current_step])
-				ambient_background.real_cooldown = A.ambient_background_cooldown[SSsunlight.current_step]
+			if(A.ambient_background)
+				ambient_background = sound(file = A.ambient_background)
 
 			if(ambient_background)
 				////////////////////////
@@ -86,13 +82,13 @@
 	if(!..())
 		return
 
-	if(src.psyloss >= 25 && (!ambient_psy || (world.time >= ambient_psy.last_time + ambient_psy.real_cooldown)))
+	if(tox >= 25 && (!ambient_psy || (world.time >= ambient_psy.last_time + ambient_psy.real_cooldown)))
 		ambient_psy = sound(file = 'sound/stalker/ambience/psy_amb.ogg')
 		////////////////////////
 		ambient_psy.last_time = world.time
 		ambient_psy.real_cooldown = 110
 		////////////////////////
-		ambient_psy.Set_Sound(AMBIENT_PSY_CHANNEL, 60*(psyloss/200), 0, -1)
+		ambient_psy.Set_Sound(AMBIENT_PSY_CHANNEL)
 		src << ambient_psy
 
 
